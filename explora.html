@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo 4 ANÁLISIS EXPLORATORIO | Taller de Introducción a Ciencia de Datos y Machine Learning</title>
+  <meta name="description" content="AMAT Curso 1 : Introduccion a Ciencia de Datos" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo 4 ANÁLISIS EXPLORATORIO | Taller de Introducción a Ciencia de Datos y Machine Learning" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="AMAT Curso 1 : Introduccion a Ciencia de Datos" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo 4 ANÁLISIS EXPLORATORIO | Taller de Introducción a Ciencia de Datos y Machine Learning" />
+  
+  <meta name="twitter:description" content="AMAT Curso 1 : Introduccion a Ciencia de Datos" />
+  
+
+<meta name="author" content="Karina Lizette Gamboa Puente" />
+<meta name="author" content="Oscar Arturo Bringas López" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="ciclo.html"/>
+
+<script src="libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./"><img src="img/conac-logo.png" width="280"></a></li|
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> BIENVENIDA</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#objetivo"><i class="fa fa-check"></i><b>1.1</b> Objetivo</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#quienes-somos"><i class="fa fa-check"></i><b>1.2</b> ¿Quienes somos?</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> INTRODUCCIÓN</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#qué-es-ciencia-de-datos"><i class="fa fa-check"></i><b>2.1</b> ¿Qué es Ciencia de Datos?</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="intro.html"><a href="intro.html#definiendo-conceptos"><i class="fa fa-check"></i><b>2.1.1</b> Definiendo conceptos:</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#objetivo-de-la-ciencia-se-datos"><i class="fa fa-check"></i><b>2.2</b> Objetivo de la Ciencia se Datos</a></li>
+<li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#qué-se-requiere-para-hacer-ciencia-de-datos"><i class="fa fa-check"></i><b>2.3</b> ¿Qué se requiere para hacer Ciencia de Datos?</a></li>
+<li class="chapter" data-level="2.4" data-path="intro.html"><a href="intro.html#tipos-de-problemas-que-se-pueden-resolver-con-ciencia-de-datos"><i class="fa fa-check"></i><b>2.4</b> Tipos de problemas que se pueden resolver con Ciencia de Datos</a></li>
+<li class="chapter" data-level="2.5" data-path="intro.html"><a href="intro.html#tipos-de-aprendizaje"><i class="fa fa-check"></i><b>2.5</b> Tipos de aprendizaje</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="intro.html"><a href="intro.html#aprendizaje-supervisado"><i class="fa fa-check"></i><b>2.5.1</b> Aprendizaje supervisado</a></li>
+<li class="chapter" data-level="2.5.2" data-path="intro.html"><a href="intro.html#aprendizaje-no-supervisado"><i class="fa fa-check"></i><b>2.5.2</b> Aprendizaje no supervisado</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="ciclo.html"><a href="ciclo.html"><i class="fa fa-check"></i><b>3</b> CICLO DE VIDA</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="ciclo.html"><a href="ciclo.html#ciclo-de-un-proyecto-de-ciencia-de-datos"><i class="fa fa-check"></i><b>3.1</b> Ciclo de un proyecto de Ciencia de Datos</a></li>
+<li class="chapter" data-level="3.2" data-path="ciclo.html"><a href="ciclo.html#data-science-scoping"><i class="fa fa-check"></i><b>3.2</b> Data Science <em>scoping</em></a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="ciclo.html"><a href="ciclo.html#data-maturity-framework"><i class="fa fa-check"></i><b>3.2.1</b> Data Maturity Framework</a></li>
+<li class="chapter" data-level="3.2.2" data-path="ciclo.html"><a href="ciclo.html#scoping"><i class="fa fa-check"></i><b>3.2.2</b> Scoping</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="explora.html"><a href="explora.html"><i class="fa fa-check"></i><b>4</b> ANÁLISIS EXPLORATORIO</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="explora.html"><a href="explora.html#análisis-exploratorio-de-datos-eda"><i class="fa fa-check"></i><b>4.1</b> Análisis Exploratorio de Datos (EDA)</a></li>
+<li class="chapter" data-level="4.2" data-path="explora.html"><a href="explora.html#eda-análisis-exploratorio-de-datos"><i class="fa fa-check"></i><b>4.2</b> EDA: Análisis Exploratorio de Datos</a></li>
+<li class="chapter" data-level="4.3" data-path="explora.html"><a href="explora.html#geda-análisis-exploratorio-de-datos-gráficos"><i class="fa fa-check"></i><b>4.3</b> GEDA: Análisis Exploratorio de Datos Gráficos</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="explora.html"><a href="explora.html#lo-que-no-se-debe-hacer"><i class="fa fa-check"></i><b>4.3.1</b> Lo que no se debe hacer…</a></li>
+<li class="chapter" data-level="4.3.2" data-path="explora.html"><a href="explora.html#principios-de-visualización"><i class="fa fa-check"></i><b>4.3.2</b> Principios de visualización</a></li>
+<li class="chapter" data-level="4.3.3" data-path="explora.html"><a href="explora.html#principios-generales-del-diseño-analítico"><i class="fa fa-check"></i><b>4.3.3</b> Principios generales del diseño analítico:</a></li>
+<li class="chapter" data-level="4.3.4" data-path="explora.html"><a href="explora.html#técnicas-de-visualización"><i class="fa fa-check"></i><b>4.3.4</b> Técnicas de visualización:</a></li>
+<li class="chapter" data-level="4.3.5" data-path="explora.html"><a href="explora.html#indicadores-de-calidad-gráfica"><i class="fa fa-check"></i><b>4.3.5</b> Indicadores de calidad gráfica:</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="explora.html"><a href="explora.html#uso-decisión-e-implementación-de-técnicas-gráficas."><i class="fa fa-check"></i><b>4.4</b> Uso, decisión e implementación de técnicas gráficas.</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="explora.html"><a href="explora.html#gráficos-univariados"><i class="fa fa-check"></i><b>4.4.1</b> Gráficos univariados:</a></li>
+<li class="chapter" data-level="4.4.2" data-path="explora.html"><a href="explora.html#gráficos-multivariados"><i class="fa fa-check"></i><b>4.4.2</b> Gráficos multivariados</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="./"><img src="img/amat-logo.png" width="280"></a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Taller de Introducción a Ciencia de Datos y Machine Learning</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="explora" class="section level1" number="4">
+<h1><span class="header-section-number">Capítulo 4</span> ANÁLISIS EXPLORATORIO</h1>
+<div class="watermark">
+<img src="img/header.png" width="400">
+</div>
+<div id="análisis-exploratorio-de-datos-eda" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> Análisis Exploratorio de Datos (EDA)</h2>
+<p>´“El análisis exploratorio de datos se refiere al <strong>proceso crítico de realizar investigaciones iniciales sobre los datos</strong> para descubrir patrones, detectar anomalías, probar hipótesis y verificar suposiciones con la ayuda de estadísticas resumidas y representaciones gráficas.” <a href="https://towardsdatascience.com/exploratory-data-analysis-8fc1cb20fd15">Towards</a></p>
+<p><img src="img/viz/investigadora.png" style="display: block; margin: auto;" /></p>
+</div>
+<div id="eda-análisis-exploratorio-de-datos" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> EDA: Análisis Exploratorio de Datos</h2>
+<p>Un analisis explorario de datos tiene principalmente 5 objetivos:</p>
+<ol style="list-style-type: decimal">
+<li>Maximizar el conocimiento de un conjunto de datos</li>
+<li>Descubrir la estructura subyacente de los datos</li>
+<li>Extraer variables importantes</li>
+<li>Detectar valores atípicos y anomalías</li>
+<li>Probar los supuestos subyacentes</li>
+</ol>
+<p><strong>EDA no es idéntico a los gráficos estadísticos</strong> aunque los dos términos se utilizan casi indistintamente. Los gráficos estadísticos son una colección de técnicas, todas basadas en gráficos y todas centradas en un aspecto de caracterización de datos. EDA abarca un lugar más grande. EDA es una filosofía sobre cómo diseccionar un conjunto de datos; lo que buscamos; cómo nos vemos; y cómo interpretamos.</p>
+<p>Los científicos de datos pueden utilizar el análisis exploratorio para garantizar que los resultados que producen sean válidos y aplicables a los resultados y objetivos comerciales deseados.</p>
+<p>EDA se utiliza principalmente para ver qué datos pueden revelar más allá del modelado formal o la tarea de prueba de hipótesis y proporciona una mejor comprensión de las variables del conjunto de datos y las relaciones entre ellas. También puede ayudar a determinar si las técnicas estadísticas que está considerando para el análisis de datos son apropiadas.</p>
+<p><img src="img/viz/meme-iniciar.jpg" width="500pt" style="display: block; margin: auto;" /></p>
+<p>Dependiendo del tipo de variable queremos obtener la siguiente información:</p>
+<ul>
+<li><p><strong>Variables numéricas:</strong></p>
+<ul>
+<li>Tipo de dato: float, integer</li>
+<li>Número de observaciones</li>
+<li>Mean</li>
+<li>Desviación estándar</li>
+<li>Cuartiles: 25%, 50%, 75%</li>
+<li>Valor máximo</li>
+<li>Valor mínimo</li>
+<li>Número de observaciones únicos</li>
+<li>Top 5 observaciones repetidas</li>
+<li>Número de observaciones con valores faltantes</li>
+<li>¿Hay redondeos?</li>
+</ul></li>
+<li><p><strong>Variables categóricas</strong></p>
+<ul>
+<li>Número de categorías</li>
+<li>Valor de las categorías</li>
+<li>Moda</li>
+<li>Valores faltantes</li>
+<li>Número de observaciones con valores faltantes</li>
+<li>Proporción de observaciones por categoría</li>
+<li>Top 1, top 2, top 3 (moda 1, moda 2, moda 3)</li>
+<li>Faltas de ortografía ?</li>
+</ul></li>
+<li><p><strong>Fechas</strong></p>
+<ul>
+<li>Fecha inicio</li>
+<li>Fecha fin</li>
+<li>Huecos en las fechas: sólo tenemos datos entre semana, etc.</li>
+<li>Formatos de fecha (YYYY-MM-DD)</li>
+<li>Tipo de dato: date, time, timestamp</li>
+<li>Número de faltantes (NA)</li>
+<li>Número de observaciones</li>
+</ul></li>
+<li><p><strong>Texto</strong></p>
+<ul>
+<li>Longitud promedio de cada observación</li>
+<li>Identificar el lenguaje, si es posible</li>
+<li>Longitud mínima de cada observación</li>
+<li>Longitud máxima de cada observación</li>
+<li>Cuartiles de longitud: 25%, 50%, 75%</li>
+</ul></li>
+<li><p><strong>Coordenadas geoespaciales</strong></p>
+<ul>
+<li>Primero se pone la latitud y luego la longitud</li>
+<li>Primer decimal: 111 kms</li>
+<li>Segundo decimal: 11.1 kms</li>
+<li>Tercer decimal: 1.1 kms</li>
+<li>Cuarto decimal: 11 mts</li>
+<li>Quinto decimal: 1.1 mt</li>
+<li>Sexto decimal: 0.11 mts</li>
+<li>Valores que están cercanos al 100 representan la longitud</li>
+<li>El símbolo en cada coordenada representa si estamos al norte (positivo) o sur (negativo) -en la latitud-, al este (positivo) o al - oeste (negativo) -en la longitud-.</li>
+</ul></li>
+</ul>
+</div>
+<div id="geda-análisis-exploratorio-de-datos-gráficos" class="section level2" number="4.3">
+<h2><span class="header-section-number">4.3</span> GEDA: Análisis Exploratorio de Datos Gráficos</h2>
+<p>Como complemento al EDA podemos realizar un GEDA, que es un análisis exploratorio de los datos apoyándonos de visualizaciones, la visualización de datos no trata de hacer gráficas “bonitas” o “divertidas,” ni de simplificar lo complejo. Más bien, trata de aprovechar nuestra gran capacidad de procesamiento visual para exhibir de manera clara aspectos importantes de los datos.</p>
+<div id="lo-que-no-se-debe-hacer" class="section level3" number="4.3.1">
+<h3><span class="header-section-number">4.3.1</span> Lo que no se debe hacer…</h3>
+<p><img src="img/viz/meme-tecnicamente.png" width="500pt" style="display: block; margin: auto;" /></p>
+<p>Fuentes: <a href="https://viz.wtf/">WTF Visualizations</a> <a href="https://flowingdata.com/2010/05/14/wait-something-isnt-right-here/">Flowingdata</a></p>
+<p><img src="img/viz/bad_viz1.png" width="600pt" style="display: block; margin: auto;" /></p>
+<p><img src="img/viz/bad_viz2.png" width="700pt" style="display: block; margin: auto;" /></p>
+<p><img src="img/viz/bad_viz3.png" width="700pt" style="display: block; margin: auto;" /></p>
+<p><img src="img/viz/bad_viz4.jpg" width="700pt" style="display: block; margin: auto;" /></p>
+<p><img src="img/viz/bad_viz5.png" width="700pt" style="display: block; margin: auto;" /></p>
+<p><img src="img/viz/bad_viz6.jpg" width="700pt" style="display: block; margin: auto;" /></p>
+</div>
+<div id="principios-de-visualización" class="section level3" number="4.3.2">
+<h3><span class="header-section-number">4.3.2</span> Principios de visualización</h3>
+<ul>
+<li><p>El objetivo de una visualización es sintentizar información relevante al análisis presentada de manera sencilla y sin ambigüedad. <strong>Lo usamos de apoyo para explicar a una audiencia más amplia que puede no ser tan técnica.</strong></p></li>
+<li><p>Una gráfica debe reportar el resultado de un análisis detallado, nunca lo reemplaza.</p></li>
+<li><p>No hacer gráficas porque se vean “cool”</p></li>
+<li><p>Antes de hacer una gráfica, debe pensarse en lo que se quiere expresar o representar</p></li>
+<li><p>Existen “reglas” o mejores gráficas para representar cierto tipo de información de acuerdo a los tipos de datos que se tienen o al objetivo se quiere lograr con la visualización. <a href="https://www.data-to-viz.com/caveats.html">From Data to Viz</a></p></li>
+<li><p>No utilizar pie charts</p></li>
+</ul>
+</div>
+<div id="principios-generales-del-diseño-analítico" class="section level3" number="4.3.3">
+<h3><span class="header-section-number">4.3.3</span> Principios generales del diseño analítico:</h3>
+<ul>
+<li><p>Muestra comparaciones, contrastes, diferencias.</p></li>
+<li><p>Muestra causalidad, mecanismo, explicación.</p></li>
+<li><p>Muestra datos multivariados, es decir, más de una o dos variables.</p></li>
+<li><p>Integra palabras, números, imágenes y diagramas.</p></li>
+<li><p>Las presentaciones analíticas, a fin de cuentas, se sostienen o caen dependiendo de la calidad, relevancia e integridad de su contenido.</p></li>
+</ul>
+<p>Esta categoría incluye técnicas específicas que dependen de la forma de nuestros datos y el tipo de pregunta que queremos investigar:</p>
+</div>
+<div id="técnicas-de-visualización" class="section level3" number="4.3.4">
+<h3><span class="header-section-number">4.3.4</span> Técnicas de visualización:</h3>
+<ul>
+<li><p><em>Tipos de gráficas</em>: cuantiles, histogramas, caja y brazos, gráficas de dispersión, puntos/barras/ líneas, series de tiempo.</p></li>
+<li><p><em>Técnicas para mejorar gráficas</em>: Transformación de datos, transparencia, vibración, suavizamiento y bandas de confianza.</p></li>
+</ul>
+</div>
+<div id="indicadores-de-calidad-gráfica" class="section level3" number="4.3.5">
+<h3><span class="header-section-number">4.3.5</span> Indicadores de calidad gráfica:</h3>
+<p>Aplicables a cualquier gráfica en particular, son guías concretas y relativamente objetivas para evaluar la calidad de una gráfica.</p>
+<ul>
+<li><p><em>Integridad Gráfica</em>: El factor de engaño, es decir, la distorsión gráfica de las cantidades representadas, debe ser mínimo.</p></li>
+<li><p><em>Chartjunk</em>: Minimizar el uso de decoración gráfica que interfiera con la interpretación de los datos: 3D, rejillas, rellenos con patrones.</p></li>
+<li><p><em>Tinta de datos</em>: Maximizar la proporción de tinta de datos vs. tinta total de la gráfica. La regla es: si hay tinta que no representa variación en los datos, o la eliminación de esa tinta no representa pérdidas de significado, esa tinta debe ser eliminada. El ejemplo más claro es el de las rejillas en gráficas y tablas:</p></li>
+</ul>
+<p><img src="img/viz/tinta.png" width="900pt" style="display: block; margin: auto;" /></p>
+<ul>
+<li><em>Densidad de datos:</em> Las mejores gráficas tienen mayor densidad de datos, que es la razón entre el tamaño del conjunto de datos y el área de la gráfica.</li>
+</ul>
+</div>
+</div>
+<div id="uso-decisión-e-implementación-de-técnicas-gráficas." class="section level2" number="4.4">
+<h2><span class="header-section-number">4.4</span> Uso, decisión e implementación de técnicas gráficas.</h2>
+<div id="gráficos-univariados" class="section level3" number="4.4.1">
+<h3><span class="header-section-number">4.4.1</span> Gráficos univariados:</h3>
+<ul>
+<li><em>Histograma:</em> El histograma es la forma más popular de mostrar la forma de un conjunto de datos. Se divide la escala de la variable en intervalos, y se realiza un conteo de los casos que caen en cada uno de los intervalos. Los histogramas pueden mostrar distintos aspectos de los datos dependiendo del tamaño y posición de los intervalos.</li>
+</ul>
+<p><br></p>
+<p><img src="img/viz/histograma.jpg" width="500pt" height="250pt" style="display: block; margin: auto;" /></p>
+<ul>
+<li><em>Diagramas de caja y brazos:</em> Es un método estandarizado para representar gráficamente una serie de datos numéricos a través de sus cuartiles. El diagrama de caja muestra a simple vista la mediana y los cuartiles de los datos, pudiendo también representar los valores atípicos de estos.</li>
+</ul>
+<p><img src="img/viz/boxplot.png" width="500pt" height="250pt" style="display: block; margin: auto;" /></p>
+<ul>
+<li><em>Gráficas de barras</em>: Una gráfica de este tipo nos muestra la frecuencia con la que se han observado los datos de una variable discreta, con una barra para cada categoría de esta variable.</li>
+</ul>
+<p><br></p>
+<p><img src="img/viz/barras.jpg" width="500pt" height="250pt" style="display: block; margin: auto;" /></p>
+<ul>
+<li><em>Gráficos Circulares (Pie Charts):</em> Un gráfico circular o gráfica circular, también llamado “gráfico de pastel,” es un recurso estadístico que se utiliza para representar porcentajes y proporciones.</li>
+</ul>
+<p><br></p>
+<p><img src="img/viz/pie.jpg" width="500pt" height="280pt" style="display: block; margin: auto;" /></p>
+</div>
+<div id="gráficos-multivariados" class="section level3" number="4.4.2">
+<h3><span class="header-section-number">4.4.2</span> Gráficos multivariados</h3>
+<ul>
+<li><em>Gráfico de dispersión:</em> Los gráficos de dispersión se usan para trazar puntos de datos en un eje vertical y uno horizontal, mediante lo que se trata de mostrar cuánto afecta una variable a otra. Si no existe una variable dependiente, cualquier variable se puede representar en cada eje y el diagrama de dispersión mostrará el grado de correlación (no causalidad) entre las dos variables.</li>
+</ul>
+<p><img src="img/viz/dispersion.png" width="500pt" height="350pt" style="display: block; margin: auto;" /></p>
+<ul>
+<li><em>Gráficas de líneas:</em> Uno de los tipos de gráfica más utilizados es la de líneas, especialmente cuando se quieren comparar visualmente varias variables a lo largo del tiempo o algún otro parámetro.</li>
+</ul>
+<p><img src="img/viz/lineas.jpg" width="500pt" height="300pt" style="display: block; margin: auto;" /></p>
+
+</div>
+</div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+
+$('.pipehover_incremental tr').hover(function() {
+  $(this).removeClass()
+  $(this).prevAll().removeClass()
+  $(this).nextAll().removeClass()
+  $(this).addClass('hover');
+  $(this).prevAll().addClass('hover');
+  $(this).closest('div').next().find('img').attr("src", $(this).attr("link"));
+});
+
+
+$('.pipehover_select_one_row tr').hover(function() {
+  $(this).removeClass()
+  $(this).prevAll().removeClass()
+  $(this).nextAll().removeClass()
+  $(this).addClass('hover');
+  $(this).closest('div').next().find('img').attr("src", $(this).attr("link"));
+});
+
+</script>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="ciclo.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Introducción a Ciencia de Datos y Machine Learning.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
