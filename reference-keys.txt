@@ -35,3 +35,6 @@ indicadores-de-calidad-gráfica
 uso-decisión-e-implementación-de-técnicas-gráficas.
 gráficos-univariados
 gráficos-multivariados
+análisis-y-visualización-con-r
+análisis-estadístico
+análisis-gráfico-de-datos
