@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="ciclo.html"/>
-
+<link rel="next" href="modela.html"/>
 <script src="libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -187,6 +187,33 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="4.5.1" data-path="explora.html"><a href="explora.html#análisis-estadístico"><i class="fa fa-check"></i><b>4.5.1</b> Análisis estadístico</a></li>
 <li class="chapter" data-level="4.5.2" data-path="explora.html"><a href="explora.html#análisis-gráfico-de-datos"><i class="fa fa-check"></i><b>4.5.2</b> Análisis Gráfico de datos</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="modela.html"><a href="modela.html"><i class="fa fa-check"></i><b>5</b> MACHINE LEARNING (Supervisado)</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="modela.html"><a href="modela.html#ml-y-algoritmos"><i class="fa fa-check"></i><b>5.1</b> ML y Algoritmos</a></li>
+<li class="chapter" data-level="5.2" data-path="modela.html"><a href="modela.html#sesgo-vs-varianza"><i class="fa fa-check"></i><b>5.2</b> Sesgo vs varianza</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="modela.html"><a href="modela.html#balance-entre-sesgo-y-varianza-o-trade-off"><i class="fa fa-check"></i><b>5.2.1</b> Balance entre sesgo y varianza o Trade-off</a></li>
+<li class="chapter" data-level="5.2.2" data-path="modela.html"><a href="modela.html#overfitting"><i class="fa fa-check"></i><b>5.2.2</b> Overfitting</a></li>
+<li class="chapter" data-level="5.2.3" data-path="modela.html"><a href="modela.html#underfitting"><i class="fa fa-check"></i><b>5.2.3</b> Underfitting</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="modela.html"><a href="modela.html#estimación-de-errores"><i class="fa fa-check"></i><b>5.3</b> Estimación de errores</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="modela.html"><a href="modela.html#errores-reducibles"><i class="fa fa-check"></i><b>5.3.1</b> Errores reducibles</a></li>
+<li class="chapter" data-level="5.3.2" data-path="modela.html"><a href="modela.html#error-irreducible"><i class="fa fa-check"></i><b>5.3.2</b> Error irreducible</a></li>
+<li class="chapter" data-level="5.3.3" data-path="modela.html"><a href="modela.html#error-total"><i class="fa fa-check"></i><b>5.3.3</b> Error total</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="modela.html"><a href="modela.html#partición-de-datos"><i class="fa fa-check"></i><b>5.4</b> Partición de datos</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="modela.html"><a href="modela.html#métodos-comunes-para-particionar-datos"><i class="fa fa-check"></i><b>5.4.1</b> Métodos comunes para particionar datos</a></li>
+<li class="chapter" data-level="5.4.2" data-path="modela.html"><a href="modela.html#qué-proporción-debería-ser-usada"><i class="fa fa-check"></i><b>5.4.2</b> ¿Qué proporción debería ser usada?</a></li>
+<li class="chapter" data-level="5.4.3" data-path="modela.html"><a href="modela.html#conjunto-de-validación"><i class="fa fa-check"></i><b>5.4.3</b> Conjunto de validación</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="modela.html"><a href="modela.html#metricas-de-desempeño-y-estimación-de-errores"><i class="fa fa-check"></i><b>5.5</b> Metricas de desempeño y estimación de errores</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="modela.html"><a href="modela.html#métricas-de-desempeño-para-clasificación"><i class="fa fa-check"></i><b>5.5.1</b> Métricas de desempeño para clasificación</a></li>
+<li class="chapter" data-level="5.5.2" data-path="modela.html"><a href="modela.html#implementación-con-r"><i class="fa fa-check"></i><b>5.5.2</b> Implementación con R</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -476,8 +503,8 @@ $('.pipehover_select_one_row tr').hover(function() {
           </div>
         </div>
       </div>
-<a href="ciclo.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="ciclo.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="modela.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -519,7 +546,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["Introducción a Ciencia de Datos y Machine Learning.pdf"],
+"download": ["Taller de  Introducción a Ciencia de Datos y Machine Learning .pdf"],
 "search": {
 "engine": "fuse",
 "options": null
@@ -531,6 +558,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
