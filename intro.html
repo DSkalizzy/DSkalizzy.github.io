@@ -210,10 +210,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.4.2" data-path="modela.html"><a href="modela.html#qué-proporción-debería-ser-usada"><i class="fa fa-check"></i><b>5.4.2</b> ¿Qué proporción debería ser usada?</a></li>
 <li class="chapter" data-level="5.4.3" data-path="modela.html"><a href="modela.html#conjunto-de-validación"><i class="fa fa-check"></i><b>5.4.3</b> Conjunto de validación</a></li>
 </ul></li>
-<li class="chapter" data-level="5.5" data-path="modela.html"><a href="modela.html#metricas-de-desempeño-y-estimación-de-errores"><i class="fa fa-check"></i><b>5.5</b> Metricas de desempeño y estimación de errores</a>
+<li class="chapter" data-level="5.5" data-path="modela.html"><a href="modela.html#métricas-de-desempeño-y-estimación-de-errores"><i class="fa fa-check"></i><b>5.5</b> Métricas de desempeño y estimación de errores</a>
 <ul>
 <li class="chapter" data-level="5.5.1" data-path="modela.html"><a href="modela.html#métricas-de-desempeño-para-clasificación"><i class="fa fa-check"></i><b>5.5.1</b> Métricas de desempeño para clasificación</a></li>
 <li class="chapter" data-level="5.5.2" data-path="modela.html"><a href="modela.html#implementación-con-r"><i class="fa fa-check"></i><b>5.5.2</b> Implementación con R</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="modela.html"><a href="modela.html#algotitmos-de-machine-learning"><i class="fa fa-check"></i><b>5.6</b> Algotitmos de machine learning</a>
+<ul>
+<li class="chapter" data-level="5.6.1" data-path="modela.html"><a href="modela.html#regresión-logística"><i class="fa fa-check"></i><b>5.6.1</b> Regresión logística</a></li>
+<li class="chapter" data-level="5.6.2" data-path="modela.html"><a href="modela.html#knn-k-nearest-neighbor"><i class="fa fa-check"></i><b>5.6.2</b> KNN: K-Nearest-Neighbor</a></li>
+<li class="chapter" data-level="5.6.3" data-path="modela.html"><a href="modela.html#árboles-de-decisión-decision-trees"><i class="fa fa-check"></i><b>5.6.3</b> Árboles de decisión (Decision trees)</a></li>
+<li class="chapter" data-level="5.6.4" data-path="modela.html"><a href="modela.html#bagging"><i class="fa fa-check"></i><b>5.6.4</b> Bagging</a></li>
+<li class="chapter" data-level="5.6.5" data-path="modela.html"><a href="modela.html#random-forest"><i class="fa fa-check"></i><b>5.6.5</b> Random Forest</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -258,17 +266,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><strong>Machine Learning</strong>: El ‘machine learning’ –aprendizaje automático– es una rama de la inteligencia artificial que permite que las máquinas aprendan de los patrones existentes en los datos. Se usan métodos computacionales para aprender de datos con el fin de producir reglas para mejorar el desempeño en alguna tarea o toma de decisión. (Está enfocado en la programación de máquinas para aprender de los patrones existentes en datos principalmente estructurados y anticiparse al futuro)</li>
 </ul>
 <p><img src="img/intro01/ml.png" width="600pt" style="display: block; margin: auto;" /></p>
-<p><img src="img/intro01/supervisado-robo.png" style="display: block; margin: auto;" /></p>
+<p><img src="img/intro01/supervisado-robo.png" width="413" style="display: block; margin: auto;" /></p>
 <ul>
 <li><strong>Business Intelligence</strong>: BI aprovecha el software y los servicios para transformar los datos en conocimientos prácticos que informan las decisiones empresariales estratégicas y tácticas de una organización. Las herramientas de BI acceden y analizan conjuntos de datos y presentan hallazgos analíticos en informes, resúmenes, tableros, gráficos, cuadros, -indicadores- o KPI’s y mapas para proporcionar a los usuarios inteligencia detallada sobre el estado del negocio. (BI esta enfocado en analizar la historia pasada)</li>
 </ul>
-<p><img src="img/intro01/bi.png" style="display: block; margin: auto;" /></p>
+<p><img src="img/intro01/bi.png" width="440" style="display: block; margin: auto;" /></p>
 <ul>
 <li><p><strong>Deep Learning</strong>: El aprendizaje profundo es un subcampo del aprendizaje automático que se ocupa de los algoritmos inspirados en la estructura y función del cerebro llamados redes neuronales artificiales.</p>
 <p>En <em>Deep Learning</em>, un modelo de computadora aprende a realizar tareas de clasificación directamente a partir de imágenes, texto o sonido. Los modelos de aprendizaje profundo pueden lograr una precisión de vanguardia, a veces superando el rendimiento a nivel humano. Los modelos se entrenan mediante el uso de un gran conjunto de datos etiquetados y arquitecturas de redes neuronales que contienen muchas capas. (Está enfocado en la programación de máquinas para el reconocimiento de imagenes y audio (datos no estructurados))</p></li>
 </ul>
-<p><img src="img/intro01/reconocimiento.png" style="display: block; margin: auto;" /></p>
-<p><img src="img/intro01/ml1.png" style="display: block; margin: auto;" /></p>
+<p><img src="img/intro01/reconocimiento.png" width="325" style="display: block; margin: auto;" /></p>
+<p><img src="img/intro01/ml1.png" width="408" style="display: block; margin: auto;" /></p>
 <ul>
 <li><p><strong>Big data</strong> se refiere a los grandes y diversos conjuntos de información que crecen a un ritmo cada vez mayor. Abarca el volumen de información, la velocidad a la que se crea y recopila, y la variedad o alcance de los puntos de datos que se cubren. Los macrodatos a menudo provienen de la minería de datos y llegan en múltiples formatos.</p>
 <p>Es comun que se confunda los conceptos de <em>Big Data</em> y <em>Big Compute</em>, como habiamos mencionado <em>Big Data</em> se refiere a el procesamiento de conjuntos de datos que son más voluminosos y complejos que los tradicionales y <em>Big Compute</em> a herramientas y enfoques que utilizan una gran cantidad de recursos de CPU y memoria de forma coordinada para resolver problemas que usan algoritmos muy complejos.</p></li>
@@ -317,7 +325,7 @@ Fuente: <a href="http://drewconway.com/zia/2013/3/26/the-data-science-venn-diagr
 <li><p>Relevancia: De igual manera los datos tienen que tener relevancia para la tarea que queremos resolver, por ejemplo, es probable que información sobre gusto en alimentos sea irrelevante para predecir número de hijos.</p></li>
 </ul></li>
 </ul>
-<p><img src="img/intro01/relevancia_suficiencia.png" style="display: block; margin: auto;" /></p>
+<p><img src="img/intro01/relevancia_suficiencia.png" width="880" style="display: block; margin: auto;" /></p>
 <ul>
 <li><p>Etiquetas</p>
 <ul>
@@ -366,7 +374,7 @@ Fuente: <a href="http://drewconway.com/zia/2013/3/26/the-data-science-venn-diagr
 <li><p>Estadísticamente podemos verificar que el algoritmo está bien</p></li>
 <li><p>Siempre tenemos que verificar con el cliente si los resultados que estamos obteniendo tienen sentido de negocio. Por ejemplo, número de grupos y características</p></li>
 </ul>
-<p><img src="img/intro01/nosupervisado-robo.png" style="display: block; margin: auto;" /></p>
+<p><img src="img/intro01/nosupervisado-robo.png" width="473" style="display: block; margin: auto;" /></p>
 
 </div>
 </div>

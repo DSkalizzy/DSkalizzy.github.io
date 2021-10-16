@@ -210,10 +210,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.4.2" data-path="modela.html"><a href="modela.html#qué-proporción-debería-ser-usada"><i class="fa fa-check"></i><b>5.4.2</b> ¿Qué proporción debería ser usada?</a></li>
 <li class="chapter" data-level="5.4.3" data-path="modela.html"><a href="modela.html#conjunto-de-validación"><i class="fa fa-check"></i><b>5.4.3</b> Conjunto de validación</a></li>
 </ul></li>
-<li class="chapter" data-level="5.5" data-path="modela.html"><a href="modela.html#metricas-de-desempeño-y-estimación-de-errores"><i class="fa fa-check"></i><b>5.5</b> Metricas de desempeño y estimación de errores</a>
+<li class="chapter" data-level="5.5" data-path="modela.html"><a href="modela.html#métricas-de-desempeño-y-estimación-de-errores"><i class="fa fa-check"></i><b>5.5</b> Métricas de desempeño y estimación de errores</a>
 <ul>
 <li class="chapter" data-level="5.5.1" data-path="modela.html"><a href="modela.html#métricas-de-desempeño-para-clasificación"><i class="fa fa-check"></i><b>5.5.1</b> Métricas de desempeño para clasificación</a></li>
 <li class="chapter" data-level="5.5.2" data-path="modela.html"><a href="modela.html#implementación-con-r"><i class="fa fa-check"></i><b>5.5.2</b> Implementación con R</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="modela.html"><a href="modela.html#algotitmos-de-machine-learning"><i class="fa fa-check"></i><b>5.6</b> Algotitmos de machine learning</a>
+<ul>
+<li class="chapter" data-level="5.6.1" data-path="modela.html"><a href="modela.html#regresión-logística"><i class="fa fa-check"></i><b>5.6.1</b> Regresión logística</a></li>
+<li class="chapter" data-level="5.6.2" data-path="modela.html"><a href="modela.html#knn-k-nearest-neighbor"><i class="fa fa-check"></i><b>5.6.2</b> KNN: K-Nearest-Neighbor</a></li>
+<li class="chapter" data-level="5.6.3" data-path="modela.html"><a href="modela.html#árboles-de-decisión-decision-trees"><i class="fa fa-check"></i><b>5.6.3</b> Árboles de decisión (Decision trees)</a></li>
+<li class="chapter" data-level="5.6.4" data-path="modela.html"><a href="modela.html#bagging"><i class="fa fa-check"></i><b>5.6.4</b> Bagging</a></li>
+<li class="chapter" data-level="5.6.5" data-path="modela.html"><a href="modela.html#random-forest"><i class="fa fa-check"></i><b>5.6.5</b> Random Forest</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -384,8 +392,8 @@ Muy pocos datos en el conjunto de entrenamiento obstaculizan la capacidad del mo
 <p><img src="img/ml/3-5-3-conjunto-validacion-2.png" width="500pt" height="350pt" style="display: block; margin: auto;" /></p>
 </div>
 </div>
-<div id="metricas-de-desempeño-y-estimación-de-errores" class="section level2" number="5.5">
-<h2><span class="header-section-number">5.5</span> Metricas de desempeño y estimación de errores</h2>
+<div id="métricas-de-desempeño-y-estimación-de-errores" class="section level2" number="5.5">
+<h2><span class="header-section-number">5.5</span> Métricas de desempeño y estimación de errores</h2>
 <p>Hasta ahora ya se ha visto cual es el proceso que debe llevar un modelo de Machine Learning y si bien, el alcance, la manera de preparar los datos, la elección de los algoritmos y el entrenamiento son partes clave, es igualmente importante medir el rendimiento del modelo entrenado.
 Al utilizar diferentes métricas para la evaluación del rendimiento, deberíamos estar en posición de detectar algún problema o de mejorar el poder de predicción general de nuestro modelo antes de que lo pongamos en producción.</p>
 <div id="métricas-de-desempeño-para-clasificación" class="section level3" number="5.5.1">
@@ -755,81 +763,208 @@ Al utilizar diferentes métricas para la evaluación del rendimiento, deberíamo
 <span id="cb10-7"><a href="modela.html#cb10-7" aria-hidden="true" tabindex="-1"></a>predicted_data <span class="sc">%&gt;%</span> </span>
 <span id="cb10-8"><a href="modela.html#cb10-8" aria-hidden="true" tabindex="-1"></a>  yardstick<span class="sc">::</span><span class="fu">recall</span>(truth, est, <span class="at">event_level =</span> <span class="st">&quot;second&quot;</span>),</span>
 <span id="cb10-9"><a href="modela.html#cb10-9" aria-hidden="true" tabindex="-1"></a>predicted_data <span class="sc">%&gt;%</span> </span>
-<span id="cb10-10"><a href="modela.html#cb10-10" aria-hidden="true" tabindex="-1"></a>  yardstick<span class="sc">::</span><span class="fu">accuracy</span>(truth, est, <span class="at">event_level =</span> <span class="st">&quot;second&quot;</span>)</span>
-<span id="cb10-11"><a href="modela.html#cb10-11" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
-<pre><code>## # A tibble: 3 × 3
+<span id="cb10-10"><a href="modela.html#cb10-10" aria-hidden="true" tabindex="-1"></a>  yardstick<span class="sc">::</span><span class="fu">accuracy</span>(truth, est, <span class="at">event_level =</span> <span class="st">&quot;second&quot;</span>),</span>
+<span id="cb10-11"><a href="modela.html#cb10-11" aria-hidden="true" tabindex="-1"></a>predicted_data <span class="sc">%&gt;%</span> </span>
+<span id="cb10-12"><a href="modela.html#cb10-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">roc_auc</span>(<span class="at">truth =</span> truth, <span class="at">estimatator =</span> .pred_Yes, <span class="at">event_level =</span> <span class="st">&quot;second&quot;</span>),</span>
+<span id="cb10-13"><a href="modela.html#cb10-13" aria-hidden="true" tabindex="-1"></a>predicted_data <span class="sc">%&gt;%</span> </span>
+<span id="cb10-14"><a href="modela.html#cb10-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pr_auc</span>(<span class="at">truth =</span> truth, <span class="at">estimatator =</span> .pred_Yes, <span class="at">event_level =</span> <span class="st">&quot;second&quot;</span>)</span>
+<span id="cb10-15"><a href="modela.html#cb10-15" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<pre><code>## # A tibble: 5 × 3
 ##   .metric   .estimator .estimate
 ##   &lt;chr&gt;     &lt;chr&gt;          &lt;dbl&gt;
 ## 1 precision binary         0.617
 ## 2 recall    binary         0.472
-## 3 accuracy  binary         0.780</code></pre>
+## 3 accuracy  binary         0.780
+## 4 roc_auc   binary         0.787
+## 5 pr_auc    binary         0.593</code></pre>
 <p>Comparemos los resultados de otros modelos:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="modela.html#cb12-1" aria-hidden="true" tabindex="-1"></a>results_cla_tree <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="at">file=</span> <span class="st">&#39;data/results_cla_tree.RDS&#39;</span>)</span>
-<span id="cb12-2"><a href="modela.html#cb12-2" aria-hidden="true" tabindex="-1"></a>results_cla_rforest <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="at">file=</span> <span class="st">&#39;data/results_cla_rforest.RDS&#39;</span>)</span>
-<span id="cb12-3"><a href="modela.html#cb12-3" aria-hidden="true" tabindex="-1"></a>results_cla_logistico <span class="ot">&lt;-</span> <span class="fu">readRDS</span>( <span class="at">file=</span> <span class="st">&#39;data/results_cla_logistico.RDS&#39;</span>)</span>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="modela.html#cb12-1" aria-hidden="true" tabindex="-1"></a>results_cla_tree <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="at">file =</span> <span class="st">&#39;data/results_cla_tree.RDS&#39;</span>)</span>
+<span id="cb12-2"><a href="modela.html#cb12-2" aria-hidden="true" tabindex="-1"></a>results_cla_rforest <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="at">file =</span> <span class="st">&#39;data/results_cla_rforest.RDS&#39;</span>)</span>
+<span id="cb12-3"><a href="modela.html#cb12-3" aria-hidden="true" tabindex="-1"></a>results_cla_logistico <span class="ot">&lt;-</span> <span class="fu">readRDS</span>( <span class="at">file =</span> <span class="st">&#39;data/results_cla_logistico.RDS&#39;</span>)</span>
 <span id="cb12-4"><a href="modela.html#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-5"><a href="modela.html#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-6"><a href="modela.html#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-7"><a href="modela.html#cb12-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-8"><a href="modela.html#cb12-8" aria-hidden="true" tabindex="-1"></a>roc_curve_cla_tree <span class="ot">&lt;-</span> <span class="fu">roc_curve</span>(results_cla_tree, <span class="at">truth =</span> truth, estimate</span>
-<span id="cb12-9"><a href="modela.html#cb12-9" aria-hidden="true" tabindex="-1"></a>                               <span class="ot">=</span>.pred_Yes, <span class="at">event_level =</span> <span class="st">&#39;second&#39;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb12-10"><a href="modela.html#cb12-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">ID =</span> <span class="st">&#39;Árbol de decisión&#39;</span>)</span>
-<span id="cb12-11"><a href="modela.html#cb12-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-12"><a href="modela.html#cb12-12" aria-hidden="true" tabindex="-1"></a>roc_curve_cla_random <span class="ot">&lt;-</span> <span class="fu">roc_curve</span>(results_cla_rforest, <span class="at">truth =</span> truth, estimate</span>
-<span id="cb12-13"><a href="modela.html#cb12-13" aria-hidden="true" tabindex="-1"></a>                               <span class="ot">=</span>.pred_Yes, <span class="at">event_level =</span> <span class="st">&#39;second&#39;</span>)<span class="sc">%&gt;%</span> </span>
-<span id="cb12-14"><a href="modela.html#cb12-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">ID =</span> <span class="st">&#39;Random Forest&#39;</span>)</span>
-<span id="cb12-15"><a href="modela.html#cb12-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-16"><a href="modela.html#cb12-16" aria-hidden="true" tabindex="-1"></a>roc_curve_cla_logistico <span class="ot">&lt;-</span> <span class="fu">roc_curve</span>(results_cla_logistico, <span class="at">truth =</span> Churn, estimate</span>
-<span id="cb12-17"><a href="modela.html#cb12-17" aria-hidden="true" tabindex="-1"></a>                               <span class="ot">=</span>.pred_Yes, <span class="at">event_level =</span> <span class="st">&#39;second&#39;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb12-18"><a href="modela.html#cb12-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">ID =</span> <span class="st">&#39;Logit&#39;</span>)</span>
-<span id="cb12-19"><a href="modela.html#cb12-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="modela.html#cb12-5" aria-hidden="true" tabindex="-1"></a>roc_curve_cla_tree <span class="ot">&lt;-</span> <span class="fu">roc_curve</span>(</span>
+<span id="cb12-6"><a href="modela.html#cb12-6" aria-hidden="true" tabindex="-1"></a>  results_cla_tree, <span class="at">truth =</span> truth, <span class="at">estimate =</span> .pred_Yes, <span class="at">event_level =</span> <span class="st">&#39;second&#39;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb12-7"><a href="modela.html#cb12-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">ID =</span> <span class="st">&#39;Árbol de decisión&#39;</span>)</span>
+<span id="cb12-8"><a href="modela.html#cb12-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-9"><a href="modela.html#cb12-9" aria-hidden="true" tabindex="-1"></a>roc_curve_cla_random <span class="ot">&lt;-</span> <span class="fu">roc_curve</span>(</span>
+<span id="cb12-10"><a href="modela.html#cb12-10" aria-hidden="true" tabindex="-1"></a>  results_cla_rforest, <span class="at">truth =</span> truth, <span class="at">estimate =</span> .pred_Yes, <span class="at">event_level =</span> <span class="st">&#39;second&#39;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb12-11"><a href="modela.html#cb12-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">ID =</span> <span class="st">&#39;Random Forest&#39;</span>)</span>
+<span id="cb12-12"><a href="modela.html#cb12-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-13"><a href="modela.html#cb12-13" aria-hidden="true" tabindex="-1"></a>roc_curve_cla_logistico <span class="ot">&lt;-</span> <span class="fu">roc_curve</span>(</span>
+<span id="cb12-14"><a href="modela.html#cb12-14" aria-hidden="true" tabindex="-1"></a>  results_cla_logistico, <span class="at">truth =</span> Churn, <span class="at">estimate =</span> .pred_Yes, <span class="at">event_level =</span> <span class="st">&#39;second&#39;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb12-15"><a href="modela.html#cb12-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">ID =</span> <span class="st">&#39;Logit&#39;</span>)</span>
+<span id="cb12-16"><a href="modela.html#cb12-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-17"><a href="modela.html#cb12-17" aria-hidden="true" tabindex="-1"></a>pr_curve_cla_tree <span class="ot">&lt;-</span> <span class="fu">pr_curve</span>(</span>
+<span id="cb12-18"><a href="modela.html#cb12-18" aria-hidden="true" tabindex="-1"></a>  results_cla_tree, <span class="at">truth =</span> truth, <span class="at">estimate =</span> .pred_Yes, <span class="at">event_level =</span> <span class="st">&#39;second&#39;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb12-19"><a href="modela.html#cb12-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">ID =</span> <span class="st">&#39;Árbol de decisión&#39;</span>)</span>
 <span id="cb12-20"><a href="modela.html#cb12-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-21"><a href="modela.html#cb12-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-22"><a href="modela.html#cb12-22" aria-hidden="true" tabindex="-1"></a>pr_curve_cla_tree <span class="ot">&lt;-</span> <span class="fu">pr_curve</span>(results_cla_tree, <span class="at">truth =</span> truth, estimate</span>
-<span id="cb12-23"><a href="modela.html#cb12-23" aria-hidden="true" tabindex="-1"></a>                               <span class="ot">=</span>.pred_Yes, <span class="at">event_level =</span> <span class="st">&#39;second&#39;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb12-24"><a href="modela.html#cb12-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">ID =</span> <span class="st">&#39;Árbol de decisión&#39;</span>)</span>
+<span id="cb12-21"><a href="modela.html#cb12-21" aria-hidden="true" tabindex="-1"></a>pr_curve_cla_random <span class="ot">&lt;-</span> <span class="fu">pr_curve</span>(</span>
+<span id="cb12-22"><a href="modela.html#cb12-22" aria-hidden="true" tabindex="-1"></a>  results_cla_rforest, <span class="at">truth =</span> truth, <span class="at">estimate =</span> .pred_Yes, <span class="at">event_level =</span> <span class="st">&#39;second&#39;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb12-23"><a href="modela.html#cb12-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">ID =</span> <span class="st">&#39;Random Forest&#39;</span>)</span>
+<span id="cb12-24"><a href="modela.html#cb12-24" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-25"><a href="modela.html#cb12-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-26"><a href="modela.html#cb12-26" aria-hidden="true" tabindex="-1"></a>pr_curve_cla_random <span class="ot">&lt;-</span> <span class="fu">pr_curve</span>(results_cla_rforest, <span class="at">truth =</span> truth, estimate</span>
-<span id="cb12-27"><a href="modela.html#cb12-27" aria-hidden="true" tabindex="-1"></a>                               <span class="ot">=</span>.pred_Yes, <span class="at">event_level =</span> <span class="st">&#39;second&#39;</span>)<span class="sc">%&gt;%</span> </span>
-<span id="cb12-28"><a href="modela.html#cb12-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">ID =</span> <span class="st">&#39;Random Forest&#39;</span>)</span>
+<span id="cb12-26"><a href="modela.html#cb12-26" aria-hidden="true" tabindex="-1"></a>pr_curve_cla_logistico <span class="ot">&lt;-</span> <span class="fu">pr_curve</span>(</span>
+<span id="cb12-27"><a href="modela.html#cb12-27" aria-hidden="true" tabindex="-1"></a>  results_cla_logistico, <span class="at">truth =</span> Churn, <span class="at">estimate =</span> .pred_Yes, <span class="at">event_level =</span> <span class="st">&#39;second&#39;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb12-28"><a href="modela.html#cb12-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">ID =</span> <span class="st">&#39;Logit&#39;</span>)</span>
 <span id="cb12-29"><a href="modela.html#cb12-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-30"><a href="modela.html#cb12-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-31"><a href="modela.html#cb12-31" aria-hidden="true" tabindex="-1"></a>pr_curve_cla_logistico <span class="ot">&lt;-</span> <span class="fu">pr_curve</span>(results_cla_logistico, <span class="at">truth =</span> Churn, estimate</span>
-<span id="cb12-32"><a href="modela.html#cb12-32" aria-hidden="true" tabindex="-1"></a>                               <span class="ot">=</span>.pred_Yes, <span class="at">event_level =</span> <span class="st">&#39;second&#39;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb12-33"><a href="modela.html#cb12-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">ID =</span> <span class="st">&#39;Logit&#39;</span>)</span>
-<span id="cb12-34"><a href="modela.html#cb12-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-35"><a href="modela.html#cb12-35" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb12-36"><a href="modela.html#cb12-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-37"><a href="modela.html#cb12-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-38"><a href="modela.html#cb12-38" aria-hidden="true" tabindex="-1"></a><span class="co"># Pegamos id a los resultados de cada modelo</span></span>
-<span id="cb12-39"><a href="modela.html#cb12-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-40"><a href="modela.html#cb12-40" aria-hidden="true" tabindex="-1"></a>results_pr_curve <span class="ot">&lt;-</span> <span class="fu">rbind</span>( pr_curve_cla_tree, pr_curve_cla_logistico, pr_curve_cla_random )</span>
-<span id="cb12-41"><a href="modela.html#cb12-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-42"><a href="modela.html#cb12-42" aria-hidden="true" tabindex="-1"></a>results_roc_curve <span class="ot">&lt;-</span> <span class="fu">rbind</span>(roc_curve_cla_tree,roc_curve_cla_logistico,roc_curve_cla_random)</span></code></pre></div>
+<span id="cb12-30"><a href="modela.html#cb12-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Pegamos id a los resultados de cada modelo</span></span>
+<span id="cb12-31"><a href="modela.html#cb12-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-32"><a href="modela.html#cb12-32" aria-hidden="true" tabindex="-1"></a>results_pr_curve <span class="ot">&lt;-</span> <span class="fu">rbind</span>( pr_curve_cla_tree, pr_curve_cla_logistico, pr_curve_cla_random )</span>
+<span id="cb12-33"><a href="modela.html#cb12-33" aria-hidden="true" tabindex="-1"></a>results_roc_curve <span class="ot">&lt;-</span> <span class="fu">rbind</span>(roc_curve_cla_tree,roc_curve_cla_logistico,roc_curve_cla_random)</span></code></pre></div>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="modela.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Curvas pecision recall y ROC</span></span>
 <span id="cb13-2"><a href="modela.html#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-3"><a href="modela.html#cb13-3" aria-hidden="true" tabindex="-1"></a>pr_curve_plot <span class="ot">&lt;-</span> results_pr_curve <span class="sc">%&gt;%</span></span>
 <span id="cb13-4"><a href="modela.html#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> recall, <span class="at">y =</span> precision, <span class="at">color =</span> ID)) <span class="sc">+</span></span>
 <span id="cb13-5"><a href="modela.html#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_path</span>(<span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
 <span id="cb13-6"><a href="modela.html#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_equal</span>() <span class="sc">+</span></span>
-<span id="cb13-7"><a href="modela.html#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Precision vs Recall&quot;</span>)<span class="sc">+</span></span>
+<span id="cb13-7"><a href="modela.html#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Precision vs Recall&quot;</span>) <span class="sc">+</span></span>
 <span id="cb13-8"><a href="modela.html#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
 <span id="cb13-9"><a href="modela.html#cb13-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-10"><a href="modela.html#cb13-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-11"><a href="modela.html#cb13-11" aria-hidden="true" tabindex="-1"></a>roc_curve_plot <span class="ot">&lt;-</span> results_roc_curve <span class="sc">%&gt;%</span></span>
-<span id="cb13-12"><a href="modela.html#cb13-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">1</span> <span class="sc">-</span> specificity, <span class="at">y =</span> sensitivity, <span class="at">color =</span> ID)) <span class="sc">+</span></span>
-<span id="cb13-13"><a href="modela.html#cb13-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_path</span>(<span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb13-14"><a href="modela.html#cb13-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>() <span class="sc">+</span></span>
-<span id="cb13-15"><a href="modela.html#cb13-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_equal</span>() <span class="sc">+</span></span>
-<span id="cb13-16"><a href="modela.html#cb13-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;ROC Curve&quot;</span>)<span class="sc">+</span></span>
-<span id="cb13-17"><a href="modela.html#cb13-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
-<span id="cb13-18"><a href="modela.html#cb13-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-19"><a href="modela.html#cb13-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-20"><a href="modela.html#cb13-20" aria-hidden="true" tabindex="-1"></a>pr_curve_plot </span></code></pre></div>
+<span id="cb13-10"><a href="modela.html#cb13-10" aria-hidden="true" tabindex="-1"></a>roc_curve_plot <span class="ot">&lt;-</span> results_roc_curve <span class="sc">%&gt;%</span></span>
+<span id="cb13-11"><a href="modela.html#cb13-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">1</span> <span class="sc">-</span> specificity, <span class="at">y =</span> sensitivity, <span class="at">color =</span> ID)) <span class="sc">+</span></span>
+<span id="cb13-12"><a href="modela.html#cb13-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_path</span>(<span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb13-13"><a href="modela.html#cb13-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>() <span class="sc">+</span></span>
+<span id="cb13-14"><a href="modela.html#cb13-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_equal</span>() <span class="sc">+</span></span>
+<span id="cb13-15"><a href="modela.html#cb13-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;ROC Curve&quot;</span>) <span class="sc">+</span></span>
+<span id="cb13-16"><a href="modela.html#cb13-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb13-17"><a href="modela.html#cb13-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-18"><a href="modela.html#cb13-18" aria-hidden="true" tabindex="-1"></a>pr_curve_plot </span></code></pre></div>
 <p><img src="Taller-de--Introducci%C3%B3n-a-Ciencia-de-Datos-y-Machine-Learning-_files/figure-html/unnamed-chunk-72-1.png" width="672" /></p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="modela.html#cb14-1" aria-hidden="true" tabindex="-1"></a>roc_curve_plot</span></code></pre></div>
 <p><img src="Taller-de--Introducci%C3%B3n-a-Ciencia-de-Datos-y-Machine-Learning-_files/figure-html/unnamed-chunk-72-2.png" width="672" /></p>
+</div>
+</div>
+<div id="algotitmos-de-machine-learning" class="section level2" number="5.6">
+<h2><span class="header-section-number">5.6</span> Algotitmos de machine learning</h2>
+<p>Hasta este momento, se ha aprendido cuáles son las métricas más utilizadas para la evaluación de modelos de machine learning, así como la importancia del problema, contexto a resolver y en qué casos una métrica algunas métricas son más relevantes que otras. Apendimos también a interpretar el <em>trade-off</em> entre distintas métricas para tomar decisiones adecuadas a nuestros recursos disponibles.</p>
+<p>Ahora, se conocerá la estructura e idea general de algoritmos que son frecuentemente usados en la industria.</p>
+<p><img src="img/ml/models.png" width="700pt" height="400pt" style="display: block; margin: auto;" /></p>
+<div id="regresión-logística" class="section level3" number="5.6.1">
+<h3><span class="header-section-number">5.6.1</span> Regresión logística</h3>
+<p>En esta sección aprenderemos sobre regresión logística. Existen dos tipos de modelos de regresión logística: regresión simple y regresión múltiple. La regresión logística simple es cuando se utiliza <strong>una</strong> variable independiente para <strong>estimar la probabilidad de pertenecer a un grupo de una variable cualitativa binaria</strong>. Cuando se utiliza <strong>más de una</strong> variable independiente, el proceso se denomina regresión logística múltiple.</p>
+<div id="función-sigmoide" class="section level4" number="5.6.1.1">
+<h4><span class="header-section-number">5.6.1.1</span> Función sigmoide</h4>
+<p>Si una variable cualitativa con dos categorías se codifica como 1 y 0, matemáticamente es posible ajustar un modelo de regresión lineal por mínimos cuadrados. El problema de esta aproximación es que, al tratarse de una recta, para valores extremos del predictor, se obtienen valores de <span class="math inline">\(Y\)</span> menores que 0 o mayores que 1, lo que entra en contradicción con el hecho de que las probabilidades siempre están dentro del rango [0,1].</p>
+<p>Para evitar estos problemas, la regresión logística transforma el valor devuelto por la regresión lineal empleando una función cuyo resultado está siempre comprendido entre 0 y 1. Existen varias funciones que cumplen esta descripción, una de las más utilizadas es la función logística (también conocida como función <strong>sigmoide</strong>):</p>
+<p><span class="math display">\[\sigma(x)=\frac{1}{1+e^{-x}}\]</span>
+Función sigmoide:</p>
+<p><img src="img/ml/3-8-1-sigmoide.png" width="300pt" height="300pt" style="display: block; margin: auto;" />
+Para valores de <span class="math inline">\(x\)</span> muy grandes, el valor de <span class="math inline">\(e^{-x}\)</span> es aproximadamente 0 por lo que el valor de la función sigmoide es 1. Para valores de <span class="math inline">\(x\)</span> muy negativos, el valor <span class="math inline">\(e^{-x}\)</span> tiende a infinito por lo que el valor de la función sigmoide es 0.</p>
+<p>Sustituyendo la <span class="math inline">\(x\)</span> de la función sigmoide por la función lineal <span class="math inline">\(\beta_0+\beta_1X\)</span> se obtiene que:</p>
+<p><span class="math display">\[P(Y=k|X=x)=\frac{e^{\beta_0+\beta_1X}}{1+e^{\beta_0+\beta_1X}}\]</span></p>
+<p>donde <span class="math inline">\(P(Y=k|X=x)\)</span> puede interpretarse como: la probabilidad de que la variable cualitativa <span class="math inline">\(Y\)</span> adquiera el valor <span class="math inline">\(k\)</span>, dado que el predictor <span class="math inline">\(X\)</span> tiene el valor <span class="math inline">\(x\)</span>.</p>
+<p>Esta función, puede ajustarse de forma sencilla con métodos de regresión lineal si se emplea su versión logarítmica:</p>
+<p><span class="math display">\[ln(\frac{p(Y=k|X=x)}{1−p(Y=k|X=x)})=\beta_0+\beta_1X\]</span></p>
+</div>
+</div>
+<div id="knn-k-nearest-neighbor" class="section level3" number="5.6.2">
+<h3><span class="header-section-number">5.6.2</span> KNN: K-Nearest-Neighbor</h3>
+<p>KNN es un algoritmo de aprendizaje supervisado que podemos usar para regresión o clasificación.</p>
+<p>La idea detrás del algoritmo es sencilla, este clasifica una nueva observación en la categoria que tenga mas elementos de las k observaciones más cercanas. Es decir, se calculará la distancia de esta nueva observación a cada observación existente, ordenaremos estas distancias de menor a mayor, tomamos las k primeras distancias, la nueva observación sera asignada al grupo que tenga mayor número de observaciones en estas k primeras distancias.</p>
+<p><strong>Clasificación</strong></p>
+<p>¿Cómo debería ser clasificada la nueva observación?</p>
+<p><img src="img/ml/3-10-1-knn-clasificacion.png" width="700pt" height="500pt" style="display: block; margin: auto;" /></p>
+<p><img src="img/ml/3-10-1-knn-all.png" width="700pt" height="500pt" style="display: block; margin: auto;" /></p>
+<p><strong>Ejemplo:</strong></p>
+<p><img src="img/ml/3-10-1-knn-clasificacion2.png" width="700pt" height="500pt" style="display: block; margin: auto;" /></p>
+<p><strong>Regresión:</strong></p>
+<p>Considerando un modelo de 3 vecinos más cercanos, las siguientes imágenes muestran el proceso de ajuste y predicción de nuevas observaciones.</p>
+<p><img src="img/ml/3-10-1-regression1.png" width="350pt" height="300pt" /><img src="img/ml/3-10-1-regression2.png" width="350pt" height="300pt" /></p>
+<p><img src="img/ml/3-10-1-regression3.png" width="350pt" height="300pt" style="display: block; margin: auto;" /></p>
+<p><strong>Ejemplo de balance de sesgo y varianza</strong></p>
+<p><img src="img/ml/3-10-1-knn-regresion2.png" width="700pt" height="500pt" style="display: block; margin: auto;" /></p>
+</div>
+<div id="árboles-de-decisión-decision-trees" class="section level3" number="5.6.3">
+<h3><span class="header-section-number">5.6.3</span> Árboles de decisión (Decision trees)</h3>
+<p><img src="img/ml/3-11-0-arboles.png" width="500pt" height="300pt" style="display: block; margin: auto;" /></p>
+<p>Un árbol de decisiones es un algoritmo del aprendizaje supervisado que se puede utilizar tanto para problemas de <strong>clasificación</strong> como de <strong>regresión</strong>. Es un clasificador estructurado en árbol, donde los nodos internos representan las características de un conjunto de datos, las ramas representan las reglas de decisión y cada nodo hoja representa el resultado. La idea básica de los árboles es buscar puntos de cortes en las variables de entrada para hacer predicciones, ir dividiendo la muestra, y encontrar cortes sucesivos para refinar las predicciones.</p>
+<p>En un árbol de decisión, hay dos tipos nodos, el nodo de decisión o nodos internos (Decision Node) y el nodo hoja o nodo terminal (Leaf node). Los nodos de decisión se utilizan para tomar cualquier decisión y tienen múltiples ramas, mientras que los nodos hoja son el resultado de esas decisiones y no contienen más ramas.</p>
+<p><img src="img/ml/3-11-1-arboles.png" width="500pt" height="300pt" style="display: block; margin: auto;" /></p>
+<ul>
+<li>Clasificación:</li>
+</ul>
+<p><img src="img/ml/3-11-arbol-reg-graph.png" width="500pt" height="300pt" style="display: block; margin: auto;" /></p>
+<p><img src="img/ml/3-11-arbol-reg-diagram.png" width="500pt" height="300pt" style="display: block; margin: auto;" /></p>
+<ul>
+<li>Regresión:</li>
+</ul>
+<p><img src="img/ml/3-11-arbol-cla-graph.png" width="500pt" height="300pt" style="display: block; margin: auto;" /></p>
+<p><img src="img/ml/3-11-arbol-cla-diagram.png" width="500pt" height="300pt" style="display: block; margin: auto;" /></p>
+<p><img src="img/ml/3-11-1-ejemploreg.png" width="500pt" height="300pt" style="display: block; margin: auto;" /></p>
+</div>
+<div id="bagging" class="section level3" number="5.6.4">
+<h3><span class="header-section-number">5.6.4</span> Bagging</h3>
+<p>Primero tenemos que definir qué es la ** Agregación de Bootstrap o Bagging**. Este es un aalgoritmo de aprendizaje automático diseñado para mejorar la estabilidad y precisión de algoritmos de ML usados en clasificación estadística y regresión. Además reduce la varianza y ayuda a evitar el sobreajuste. Aunque es usualmente aplicado a métodos de árboles de decisión, puede ser usado con cualquier tipo de método. Bagging es un caso especial del promediado de modelos.</p>
+<p>Los métodos de bagging son métodos donde los algoritmos simples son usados en paralelo. El principal objetivo de los métodos en paralelo es el de aprovecharse de la independencia que hay entre los algoritmos simples, ya que el error se puede reducir bastante al promediar las salidas de los modelos simples. Es como si, queriendo resolver un problema entre varias personas independientes unas de otras, damos por bueno lo que eligiese la mayoría de las personas.</p>
+<p>Para obtener la agregación de las salidas de cada modelo simple e independiente, bagging puede usar la votación para los métodos de clasificiación y el promedio para los métodos de regresión.</p>
+<p><img src="img/ml/3-12-1-bag.png" width="500pt" height="300pt" style="display: block; margin: auto;" /></p>
+</div>
+<div id="random-forest" class="section level3" number="5.6.5">
+<h3><span class="header-section-number">5.6.5</span> Random Forest</h3>
+<p>Un bosque aleatorio es un algoritmo de aprendizaje automático supervisado que se
+construye a partir de algoritmos de árbol de decisión. Este algoritmo se aplica
+en diversas industrias, como la banca y el comercio electrónico, para predecir el comportamiento y los resultados.</p>
+<p>En esta clase se dará una descripción general del algoritmo de bosque aleatorio,
+cómo funciona y las características del algoritmo.</p>
+<p>También se señalan las ventajas y desventajas de este algoritmo.</p>
+<p><strong>¿Qué es?</strong></p>
+<p>Un bosque aleatorio es una técnica de aprendizaje automático que se utiliza
+para resolver problemas de regresión y clasificación. Utiliza el aprendizaje por
+conjuntos, que es una técnica que combina muchos clasificadores para proporcionar
+soluciones a problemas complejos.</p>
+<p>Este algoritmo consta de muchos árboles de decisión. El “bosque” generado se entrena
+mediante <strong>agregación de bootstrap (bagging)</strong>, el cual es es un meta-algoritmo
+de conjunto que mejora la precisión de los algoritmos de aprendizaje automático.</p>
+<p>El algoritmo establece el resultado en función de las predicciones de los
+árboles de decisión. Predice tomando el promedio o la media de la salida de
+varios árboles. El aumento del número de árboles aumenta la precisión del resultado.</p>
+<p>Un bosque aleatorio erradica las limitaciones de un algoritmo de árbol de decisión.
+Reduce el sobreajuste de conjuntos de datos y aumenta la precisión.</p>
+<p><img src="img/ml/3-10-1-bosques-aleatorios.png" width="600pt" height="300pt" style="display: block; margin: auto;" /></p>
+<div id="características-de-los-bosques-aleatorios" class="section level4" number="5.6.5.1">
+<h4><span class="header-section-number">5.6.5.1</span> Características de los bosques aleatorios</h4>
+<ul>
+<li><p>Es más preciso que el algoritmo árbol de decisiones.</p></li>
+<li><p>Proporciona una forma eficaz de gestionar los datos faltantes.</p></li>
+<li><p>Puede producir una predicción razonable sin ajuste de hiperparámetros.</p></li>
+<li><p>Resuelve el problema del sobreajuste en los árboles de decisión.</p></li>
+<li><p>En cada árbol forestal aleatorio, se selecciona aleatoriamente un subconjunto
+de características en el punto de división del nodo.</p></li>
+</ul>
+</div>
+<div id="aplicar-árboles-de-decisión-en-un-bosque-aleatorio" class="section level4" number="5.6.5.2">
+<h4><span class="header-section-number">5.6.5.2</span> Aplicar árboles de decisión en un bosque aleatorio</h4>
+<p><strong>La principal diferencia entre el algoritmo de árbol de decisión y el algoritmo de bosque aleatorio es que</strong> el establecimiento de nodos raíz y la desagregación de
+nodos se realiza de forma aleatoria en este último. <strong>El bosque aleatorio emplea el método de bagging para generar la predicción requerida.</strong></p>
+<p><strong>El método bagging implica el uso de diferentes muestras de datos (datos de entrenamiento) en lugar de una sola muestra.</strong> Los árboles de decisión producen diferentes resultados, dependiendo de los datos de entrenamiento alimentados al
+algoritmo de bosque aleatorio. Estos resultados se clasificarán y se seleccionará
+el más alto como resultado final.</p>
+<p>Nuestro primer ejemplo todavía se puede utilizar para explicar cómo funcionan los bosques aleatorios. Supongamos que solo tenemos cuatro árboles de decisión. En este caso, los datos de entrenamiento que comprenden las observaciones y funciones del teléfono se dividirán en cuatro nodos raíz.</p>
+<p>Los nodos raíz podrían representar cuatro características que podrían influir en la elección del cliente (precio, almacenamiento interno, cámara y RAM). <strong>El bosque aleatorio dividirá los nodos seleccionando características al azar. La predicción final se seleccionará en función del resultado de los cuatro árboles.</strong></p>
+<p><strong>El resultado elegido por la mayoría de los árboles de decisión será la elección final.</strong></p>
+<p>Si tres árboles predicen la compra y un árbol predice que no comprará, entonces la predicción final será la compra. En este caso, se prevé que el cliente comprará el teléfono.</p>
+<p>El siguiente diagrama muestra un clasificador de bosque aleatorio simple.</p>
+<p><img src="img/ml/randomforest_ejemplo.jpg" width="700pt" height="400pt" style="display: block; margin: auto;" /></p>
+<p><img src="img/ml/3-13-1-randomforest.png" width="600pt" height="300pt" style="display: block; margin: auto;" /></p>
+</div>
+<div id="ventajas-y-desventajas-de-bosques-aleatorios" class="section level4" number="5.6.5.3">
+<h4><span class="header-section-number">5.6.5.3</span> Ventajas y desventajas de bosques aleatorios</h4>
+<p><strong>Ventajas</strong></p>
+<ul>
+<li><p>Puede realizar tareas de regresión y clasificación.</p></li>
+<li><p>Un bosque aleatorio produce buenas predicciones que se pueden entender fácilmente.</p></li>
+<li><p>Puede manejar grandes conjuntos de datos de manera eficiente.</p></li>
+<li><p>Proporciona un mayor nivel de precisión en la predicción de resultados sobre el algoritmo del árbol de decisión.</p></li>
+</ul>
+<p><strong>Desventajas</strong></p>
+<ul>
+<li><p>Cuando se usa un bosque aleatorio, se requieren bastantes recursos para el cálculo.</p></li>
+<li><p>Consume más tiempo en comparación con un algoritmo de árbol de decisiones.</p></li>
+<li><p>No producen buenos resultados cuando los datos son muy escasos. En este caso,
+el subconjunto de características y la muestra de arranque producirán un espacio invariante. Esto conducirá a divisiones improductivas, que afectarán el resultado.</p></li>
+</ul>
 
+</div>
 </div>
 </div>
 </div>

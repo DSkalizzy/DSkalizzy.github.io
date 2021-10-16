@@ -52,6 +52,16 @@ partición-de-datos
 métodos-comunes-para-particionar-datos
 qué-proporción-debería-ser-usada
 conjunto-de-validación
-metricas-de-desempeño-y-estimación-de-errores
+métricas-de-desempeño-y-estimación-de-errores
 métricas-de-desempeño-para-clasificación
 implementación-con-r
+algotitmos-de-machine-learning
+regresión-logística
+función-sigmoide
+knn-k-nearest-neighbor
+árboles-de-decisión-decision-trees
+bagging
+random-forest
+características-de-los-bosques-aleatorios
+aplicar-árboles-de-decisión-en-un-bosque-aleatorio
+ventajas-y-desventajas-de-bosques-aleatorios
