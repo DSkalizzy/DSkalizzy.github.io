@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo 3 CICLO DE VIDA | Taller de Introducción a Ciencia de Datos y Machine Learning</title>
+  <title>Capítulo 6 DISEÑO DE EXPERIMENTOS | Taller de Introducción a Ciencia de Datos y Machine Learning</title>
   <meta name="description" content="AMAT Curso 1 : Introduccion a Ciencia de Datos" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo 3 CICLO DE VIDA | Taller de Introducción a Ciencia de Datos y Machine Learning" />
+  <meta property="og:title" content="Capítulo 6 DISEÑO DE EXPERIMENTOS | Taller de Introducción a Ciencia de Datos y Machine Learning" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 3 CICLO DE VIDA | Taller de Introducción a Ciencia de Datos y Machine Learning" />
+  <meta name="twitter:title" content="Capítulo 6 DISEÑO DE EXPERIMENTOS | Taller de Introducción a Ciencia de Datos y Machine Learning" />
   
   <meta name="twitter:description" content="AMAT Curso 1 : Introduccion a Ciencia de Datos" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="intro.html"/>
-<link rel="next" href="explora.html"/>
+<link rel="prev" href="modela.html"/>
+<link rel="next" href="agrupa.html"/>
 <script src="libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -276,196 +276,104 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="ciclo" class="section level1" number="3">
-<h1><span class="header-section-number">Capítulo 3</span> CICLO DE VIDA</h1>
+<div id="muestreo" class="section level1" number="6">
+<h1><span class="header-section-number">Capítulo 6</span> DISEÑO DE EXPERIMENTOS</h1>
 <div class="watermark">
 <img src="img/header.png" width="400">
 </div>
-<div id="ciclo-de-un-proyecto-de-ciencia-de-datos" class="section level2" number="3.1">
-<h2><span class="header-section-number">3.1</span> Ciclo de un proyecto de Ciencia de Datos</h2>
-<p><img src="img/intro01/etapas.png" width="800pt" height="600pt" style="display: block; margin: auto;" /></p>
+<div id="diseño-de-experimentos-para-machine-learning" class="section level2" number="6.1">
+<h2><span class="header-section-number">6.1</span> Diseño de experimentos para Machine Learning</h2>
+<p><img src="img/muestreo/guerrero-dragon.jpeg" width="600px" height="500px" style="display: block; margin: auto;" /></p>
+<div id="por-qué-hacer-un-experimento" class="section level3" number="6.1.1">
+<h3><span class="header-section-number">6.1.1</span> ¿Por qué hacer un experimento?</h3>
+<p>Diferentes segmentos de clientes pueden tener diferentes preferencias, gustos, características, etc. En cuanto a los productos ofertados por una empresa, así como la manera de ser tratados y o recompensados.</p>
+<p>Para poder conocer los métodos que mejor funcionan en cada segmento de la población es necesario observar su respuesta ante diferentes posibes <em>tratamientos</em> o <em>estímulos</em>.</p>
+<p>El tamaño de la población en cada grupo, así como la forma de medir los resultados debe realizarse con una <strong>metodología estadística que permita garantizar la confianza de los resultados</strong>.</p>
+<p><img src="img/muestreo/experimento_clientes.png" width="500px" height="250px" style="display: block; margin: auto;" /></p>
+<p><strong>Un diseño de experimentos es precisamente la aplicación del método científico para generar conocimiento acerca de un sistema o proceso.</strong></p>
+<p>En el diseño experimental se plantea un conjunto de pruebas documentadas de manera en que los datos recabados puedan ser analizados mediante la estadística para obtener patrones o respuestas predecibles válidas y objetivas que nos formen una conclusión efectiva.</p>
+</div>
+<div id="ab-testing" class="section level3" number="6.1.2">
+<h3><span class="header-section-number">6.1.2</span> A/B Testing</h3>
+<p>Uno de los métodos estadísticos más usados es: <strong>A/B Testing</strong>. Este método consiste en segmentar a la población en distintos grupos y aplicar un estímulo a los integrantes de un grupo y comparar el efecto que el estímulo genera en otro grupo al cual se le trató de manera distinta. La manera de estratificar se realiza rigurosamente mediante técnicas estadísticas.</p>
+<p><img src="img/muestreo/a_b_testing.png" width="600px" height="350px" style="display: block; margin: auto;" /></p>
+<p>Es una metodología de prueba de hipótesis utilizada para responder preguntas del estilo:</p>
+<p><strong>¿Cuál es el mejor incentivo para retener a los clientes?</strong></p>
+<p><strong>¿Cuál es la mejor promoción para aumentar mis ventas en un segmento de clientes particular?</strong></p>
+<p>Con el fin de disminuir posibles sesgos, esta técnica requiere de manera estricta que la asignación de grupos sea realizada de manera estocástica mediante técnicas de muestreo estratificado.</p>
+</div>
+<div id="qué-es-y-para-qué-sirve-muestreo" class="section level3" number="6.1.3">
+<h3><span class="header-section-number">6.1.3</span> ¿Qué es y para qué sirve muestreo?</h3>
+<p>El muestreo es el proceso de seleccionar un conjunto de individuos de una población con el fin de estudiarlos y poder caracterizar el total de la población. <strong>Nos ayuda a obtener información fiable de la población a partir de una muestra de la que extrae inferencias estadísticas con un margen de error medido en términos de probabilidades</strong>.</p>
+<p><img src="img/muestreo/1-1-1-muestreo.jpg" width="450pt" height="400pt" style="display: block; margin: auto;" /></p>
+<p>El aumento del uso de las técnicas de muestreo en la investigación es claro porque es un procedimiento
+que <strong>cuesta mucho menos dinero y consume menos tiempo</strong>. Una muestra bien seleccionada de unos cuantos
+miles de individuos puede representar con gran precisión una población de millones.</p>
+</div>
+<div id="ventajas-del-muestreo-en-el-mundo-corporativo" class="section level3" number="6.1.4">
+<h3><span class="header-section-number">6.1.4</span> Ventajas del muestreo en el mundo corporativo</h3>
+<p><strong>Ventajas</strong></p>
+<ul>
+<li><p><strong>Reducción de costos:</strong> Los costos de un estudio serán menores si los datos de interés se pueden obtener a partir de una muestra de la población. Por ejemplo, cuando se realizan estudios de prevalencia de un evento de interés, es más económico medir una muestra representativa de 1500 sujetos de una población, que el total de individuos que la componen.</p></li>
+<li><p><strong>Eficiencia:</strong> Al trabajar con un número reducido de sujetos de estudio, representativos de la población; el tiempo necesario para conducir el estudio y obtener resultados y conclusiones será notoriamente menor.</p></li>
+</ul>
+<p><img src="img/muestreo/savings.jpeg" width="600pt" height="250pt" style="display: block; margin: auto;" /></p>
+<p><strong>Importancia</strong></p>
+<p>No es posible ponerse en contacto con todos los clientes, por lo que solo se incluye una muestra de esa población al realizar una investigación estadística. El supuesto es que la muestra es representativa de toda la población. Las empresas utilizan el muestreo para determinar nuevos nichos de mercado, productos, niveles de satisfacción y <strong>métodos de retención</strong> sin causar grandes pérdidas cuando el método implementado no es adecuado.</p>
+</div>
+<div id="qué-se-requiere-para-formular-un-problema-de-muestreo" class="section level3" number="6.1.5">
+<h3><span class="header-section-number">6.1.5</span> ¿Qué se requiere para formular un problema de muestreo?</h3>
+<p>Es requisito fundamental de una buena muestra que las características de interés que existen en la
+población se reflejen en la muestra de la manera más cercana posible.
+Esas características tienen que ver principalmente con el tamaño de la muestra y con la manera de obtenerla.</p>
+<p>Para esto se necesitan definir los siguientes conceptos:</p>
+<ul>
+<li><p><strong>Población objetivo:</strong> Colección completa de todas las unidades que se quieren estudiar.</p></li>
+<li><p><strong>Muestra:</strong> Subconjunto de la población.</p></li>
+<li><p><strong>Unidad de muestreo:</strong> Objeto a ser seleccionado en la muestra que permitirá el acceso a
+la unidad de observación.</p></li>
+<li><p><strong>Unidad de observación:</strong> Objeto sobre el que finalmente se realiza la medición.</p></li>
+<li><p><strong>Variable de interés:</strong> Característica propia de los individuos sobre la que se realiza la
+inferencia para resolver los objetivos de la investigación.</p></li>
+</ul>
+<p>En la teoría de muestreo la variable de interés no se supone como una variable aleatoria sino como una
+cantidad fija o una característica propia de las unidades que componen la población.</p>
+</div>
+</div>
+<div id="muestreo-probabilístico" class="section level2" number="6.2">
+<h2><span class="header-section-number">6.2</span> Muestreo probabilístico</h2>
+<p>El muestreo probabilístico se define como aquel en que todos los individuos de la población tienen una probabilidad de entrar a formar parte de la muestra. Los diseños en que interviene el azar producen muestras representativas la mayoría de las veces, aunque no garantizan la representatividad de la población que sometemos a estudio.</p>
+<p>Los sistemas de muestreo probabilísticos de clasifican de la siguiente manera:</p>
+<p><img src="img/muestreo/1-1-4-tipos-de-muestreo-probabilistico.jpg" width="450pt" height="450pt" style="display: block; margin: auto;" /></p>
+<ul>
+<li><strong>Muestreo aleatorio simple:</strong> Se caracteriza porque cada elemento de la población tiene la misma probabilidad de ser escogido para formar parte de la muestra. Una vez censado el marco de la población, se asigna un número a cada individuo o elemento y se elige aleatoriamente</li>
+</ul>
+<p>Para seleccionar una muestra de este tipo se requiere tener en forma de lista todos los elementos que integran la población investigada y utilizar tablas de números aleatorios.</p>
+<p>Ejemplo: A un grupo de 100 personas se les numera de uno a cien y se depositan en una urna 100 canicas a su vez numeradas de uno a cien. Para obtener una muestra aleatoria simple de 20 elementos, tendríamos que sacar 20 canicas numeradas de la urna que nos seleccionarán en forma completamente aleatoria a los 20 elementos escogidos para que opinen sobre un nuevo producto.</p>
+<p><img src="img/muestreo/1-1-4-tipos-de-muestreo-probabilistico-mas.png" width="250pt" height="250pt" style="display: block; margin: auto;" /></p>
+<ul>
+<li><strong>Muestreo sistemático:</strong> Es susceptible de ser más preciso que el muestreo aleatorio simple. Se elige un primer elemento del universo y luego se van escogiendo otros elementos igualmente espaciados a partir del primero. Consiste en dividir la población en <span class="math inline">\(n\)</span> estratos, compuestos de <span class="math inline">\(k\)</span> unidades.</li>
+</ul>
+<p>Ejemplo: a partir de una lista de 100 establecimientos de comestibles, deseamos seleccionar una muestra probabilística de 25 tiendas. La forma de hacerlo sería:</p>
 <ol style="list-style-type: decimal">
-<li><p><strong>Identificación del problema</strong></p>
-<ul>
-<li>Debemos conocer si el problema es significativo, si el problema se puede resolver con ciencia de datos, y si habrá un compromiso real del lado de cliente/usuario/partner para implementar la solución con todas sus implicaciones: recursos físicos y humanos.</li>
-</ul></li>
+<li><p>Dividir 100 entre 25 para obtener 4 tiendas que es el salto sistemático.</p></li>
+<li><p>Extraer un número al azar entre 1 y 4. Supóngase que es el número 3 el cual corresponde al primer elemento seleccionado.</p></li>
+<li><p>Se incluyen en la muestra de establecimientos numerados: <span class="math inline">\(3, 7, 11, 15\)</span></p></li>
 </ol>
-<p><img src="img/intro01/identificacion.jpg" style="display: block; margin: auto;" /></p>
-<ol start="2" style="list-style-type: decimal">
-<li><p><strong>Scoping</strong></p>
+<p><img src="img/muestreo/1-1-4-tipos-de-muestreo-probabilistico-sistematico.jpg" width="350pt" height="450pt" style="display: block; margin: auto;" /></p>
 <ul>
-<li><p>El objetivo es definir el alcance del proyecto y por lo tanto definir claramente los objetivos.</p></li>
-<li><p>Conocer las acciones que se llevarán a cabo para cada objetivo. Estas definirán las soluciones analíticas a hacer.</p></li>
-<li><p>Queremos saber si los datos con los que contamos son relevantes y suficientes.</p></li>
-<li><p>Hacer visible los posibles conflictos éticos que se pueden tener en esta fase.</p></li>
-<li><p>Debemos definir el cómo evaluaremos que el análisis de esos datos será balanceada entre eficiencia, efectividad y equidad.</p></li>
-</ul></li>
-</ol>
-<p><img src="img/intro01/alcance.png" width="500pt" style="display: block; margin: auto;" /></p>
-<ol start="3" style="list-style-type: decimal">
-<li><p><strong>Adquisición de datos</strong></p>
-<ul>
-<li><p>Adquisición, almacenamiento, entendimiento y preparación de los datos para después poder hacer analítica sober ellos.</p></li>
-<li><p>Asegurar que en la transferencia estamos cumpliendo con el manejo adecuado de datos sensibles y privados.</p></li>
-</ul></li>
-</ol>
-<p><img src="img/intro01/datos.jpg" style="display: block; margin: auto;" /></p>
-<ol start="4" style="list-style-type: decimal">
-<li><p><strong>EDA</strong></p>
-<ul>
-<li><p>El objetivo en esta fase es conocer los datos con los que contamos y contexto de negocio explicado a través de los mismos.</p></li>
-<li><p>Identificamos datos faltantes, sugerimos cómo imputarlos.</p></li>
-<li><p>Altamente apoyado de visualización y procesos de adquisición y limpieza de datos.</p></li>
-</ul></li>
-</ol>
-<p><img src="img/intro01/eda.jpg" style="display: block; margin: auto;" /></p>
-<ol start="5" style="list-style-type: decimal">
-<li><p><strong>Formulación analítica</strong></p>
-<ul>
-<li>Esta fase incluye empezar a formular nuestro problema como uno de ciencia de datos, el conocimiento adquirido en la fase de exploración nos permite conocer a mayor detalle del problema y por lo tanto de la solución adecuada.</li>
-</ul></li>
-<li><p><strong>Modelado</strong></p>
-<ul>
-<li><p>Proceso iterativo para desarrollar diferentes “experimentos.”</p>
-<ul>
-<li>Mismo algoritmo/método diferentes hiperparámetros (grid search).</li>
-<li>Diferentes algortimos.</li>
-</ul></li>
-<li><p>Selección de un muy pequeño conjunto de modelos tomando en cuenta un balance entre interpretabilidad, complejidad, desempeño, fairness.</p></li>
-<li><p>Correcta interpretación de los resultados de desempeño de cada modelo.</p></li>
-</ul></li>
-</ol>
-<p><img src="img/intro01/formulacion.jpg" style="display: block; margin: auto;" /></p>
-<ol start="7" style="list-style-type: decimal">
-<li><p><strong>Validación</strong></p>
-<ul>
-<li><p>Es muy importante poner a prueba el/los modelo/modelos seleccionados en la fase anterior. Esta prueba es en campo con datos reales, le llamamos prueba piloto.</p></li>
-<li><p>Debemos medir el impacto causal que nuestro modelo tuvo en un ambiente real.</p></li>
-</ul></li>
-</ol>
-<p><img src="img/intro01/validacion.jpg" style="display: block; margin: auto;" /></p>
-<ol start="8" style="list-style-type: decimal">
-<li><p><strong>Acciones a realizar</strong></p>
-<ul>
-<li><p>Finalmente esta etapa corresponde a compartir con los tomadores de decisiones/stakeholders/creadores de política pública los resultados obtenidos y la recomendación de acciones a llevar a cabo -menú de opciones-.</p></li>
-<li><p>Las implicaciones éticas de esta fase consisten en hacer conciente el impacto social de nuestro trabajo.</p></li>
-</ul></li>
-</ol>
-<p><img src="img/intro01/action.jpg" style="display: block; margin: auto;" /></p>
-</div>
-<div id="data-science-scoping" class="section level2" number="3.2">
-<h2><span class="header-section-number">3.2</span> Data Science <em>scoping</em></h2>
-<p>El <strong>scoping</strong> es uno de los pasos más importante en los proyectos de ciencia de datos, es ideal realizarlo con ayuda del cliente, tiene como objetivo <strong>definir el alcance del proyecto</strong>, definir los objetivos, conocer las acciones que se llevaran acabo, conocer si los datos son relevantes y suficientes, proponer soluciones analíticas, entre otros puntos que se tocaran a continuación.</p>
-<p><img src="img/intro01/3-14-1-objetivo.jpg" width="300pt" height="300pt" style="display: block; margin: auto;" /></p>
-<div id="data-maturity-framework" class="section level3" number="3.2.1">
-<h3><span class="header-section-number">3.2.1</span> Data Maturity Framework</h3>
-<p>Antes de iniciar con el <em>scoping</em>, queremos conocer si los interesados <strong>están listos para realizar un proyecto de ciencia de datos</strong>. Para ello, una opción es usar el <a href="http://www.datasciencepublicpolicy.org/wp-content/uploads/2018/05/Data_Maturity_Framework_4.28.16.pdf"><em>Data Maturity Framework</em></a> desarrollado en la Universidad de Chicago.</p>
-<p>El <em>Data Maturity Framework</em> nos sirve para ver dónde se encuentra la organización en el marco de madurez de datos y cómo mejorar su organización, tecnología y preparación de datos.</p>
-<p>Tiene tres áreas de contenido:</p>
-<ul>
-<li><p>Definición del problema</p></li>
-<li><p>Disponibilidad de datos y tecnología</p></li>
-<li><p>Preparación organizacional</p></li>
+<li><strong>Muestreo estratificado:</strong> En este tipo de muestreo la población de estudio se divide en subgrupos o estratos, escogiendo posteriormente una muestra al azar de cada estrato. Esta división suele realizarse según una característica que pueda influir sobre los resultados del estudio.</li>
 </ul>
-<p>Esta dividido en tres partes:</p>
+<p>Si la estratificación se realiza respecto una característica se denomina <em>muestreo estratificado simple</em>, y si se realiza respecto a dos o más características sedenomina <em>muestreo estratificado compuesto</em>.</p>
+<p>Ejemplo: Si existen 5 millones de hipertensos en una población y hay un <span class="math inline">\(35\%\)</span> de pacientes que fuman, podemos estratificar de manera que en nuestra muestra queden representados al igual que en el total de la población, la misma proporción de hipertensos fumadores (<span class="math inline">\(35\%\)</span>) y de no fumadores (<span class="math inline">\(65\%\)</span>).</p>
+<p><img src="img/muestreo/1-1-4-tipos-de-muestreo-probabilistico-estratificado.jpg" width="350pt" height="350pt" style="display: block; margin: auto;" /></p>
 <ul>
-<li>Un cuestionario y una encuesta para evaluar la preparación de la organización.</li>
+<li><strong>Muestreo por conglomerados:</strong> El muestreo por conglomerados nos ayuda cuando es imposible o poco práctico crear un marco de muestreo de una población objetivo debido a que está muy dispersa geográficamente y el costo de la recopilación de datos es relativamente alto. Los elementos de la población son seleccionados al azar en forma natural por agrupaciones (clusters). Los elementos del muestreo se seleccionan de la población de manera individual, uno a la vez.</li>
 </ul>
-<p><img src="img/intro01/3-14-1-dmf1.png" width="750pt" height="800pt" style="display: block; margin: auto;" /></p>
-<ul>
-<li>Matriz de preparación de datos y tecnología</li>
-</ul>
-<p><img src="img/intro01/3-14-1-dmf2.png" width="962" style="display: block; margin: auto;" /></p>
-<ul>
-<li>Matriz de preparación organizacional</li>
-</ul>
-<p><img src="img/intro01/3-14-1-dmf3.png" width="854" style="display: block; margin: auto;" /></p>
-</div>
-<div id="scoping" class="section level3" number="3.2.2">
-<h3><span class="header-section-number">3.2.2</span> Scoping</h3>
-<p>Para realizar el scoping podemos apoyarnos del siguiente <a href="https://drive.google.com/drive/folders/1wdh2hfNcWIi72ozPQwV_egG6_J2XymQZ?usp=sharing">documento</a>.</p>
-<p>Ya que sabemos que la organización esta preparada para realizar un proyecto de ciencia de datos, podemos inicar el <em>scoping</em>, el proceso a seguir es el siguiente:</p>
-<div id="definir-ellos-objetivos" class="section level4" number="3.2.2.1">
-<h4><span class="header-section-number">3.2.2.1</span> Definir el(los) objetivo(s)</h4>
-<p>Considerado <strong>el paso más importante del proceso</strong>, los <em>stakeholders</em> iniciaran con un planteamiento del problema de manera muy general, nuestra responsabilidad será ir aterrizando ideas y <strong>definir el problema de manera más concreta</strong>, esta parte del <em>scoping</em> puede ocurrir en distintas iteraciones.</p>
-<p>Necesitamos hacer que el objetivo sea <strong>concreto, medible y optimizable</strong>. Cuando se van refinando objetivos, es común que se vaya priorizando por lo que tendremos <em>tradeoffs</em> que irán ligados a las acciones y al contexto del negocio.</p>
-</div>
-<div id="qué-acciones-o-intervenciones-existen-que-serán-mejoradas-a-través-de-este-proyecto" class="section level4" number="3.2.2.2">
-<h4><span class="header-section-number">3.2.2.2</span> ¿Qué acciones o intervenciones existen que serán mejoradas a través de este proyecto?</h4>
-<p>Debemos <strong>definir acciones concretas</strong>, si esto no ocurre es muy probable que la solución no sea implementada por lo que el proyecto no tendrá uso y no estaráamos haciendo ciencia de datos.</p>
-<p>La implementación del proyecto debería ayudar a tener mejor información para llevar acabo estas acciones, es decir, el proyecto mejorará la toma de decisiones basadas en la evidencia de los datos.</p>
-<p>Hacer una lista con las acciones ayuda a que el proyecto sea accionable, es posible que estas acciones no existan aún en la organización, por lo que el proyecto puede ayudar a <strong>generar nuevas acciones</strong>.</p>
-<p><img src="img/intro01/3-14-1-accion.jpg" width="500pt" height="400pt" style="display: block; margin: auto;" /></p>
-<p>Es muy común que la acción definida por el <em>stakeholder</em> sea de muy alto nivel, en ese caso podemos tomar 2 caminos en el <em>scoping</em>:</p>
-<ul>
-<li><p>Proponer en el <em>scoping</em> que el proyecto informe a esa acción general.</p></li>
-<li><p>Generar a partir de esa acción general acciones más pequeñas.</p></li>
-</ul>
-</div>
-<div id="qué-datos-tenemos-y-cuáles-necesitamos" class="section level4" number="3.2.2.3">
-<h4><span class="header-section-number">3.2.2.3</span> ¿Qué datos tenemos y cuáles necesitamos?</h4>
-<p>Primero observemos que no se habia hablado de los datos hasta este punto, lo anterior porque debemos primero pensar en el problema, entenderlo y luego ver con qué datos contamos para resolverlo. Si hacemos esto primero seguramente acabaremos desarrollando productos de datos “muertos” y no accionables.</p>
-<p>En este paso se le dara uso al <em>Data Maturity Framework</em>, queremos conocer cómo se guardan los datos, con qué frecuencia, en qué formato, en qué estructura, qué granularidad tiene, desde cuándo tenemos historia de estos datos, si existe un sesgo en su recolección, con qué frencuencia recolectan nueva información, sobreescribe la ya existente?</p>
-<p>Uno de los objetivos consiste en <strong>identificar si la granularidad, frecuencia y horizonte de tiempo en los datos corresponde a la granularidad, frecuencia y horizonte de tiempo de las acciones</strong>.</p>
-<p>Otro punto importante es saber si los datos con los que se cuenta son <strong>relevantes y suficientes</strong> para desarrollar el proyecto, se pueden considerar fuentes de datos externa.</p>
-<div id="data-lakes" class="section level5" number="3.2.2.3.1">
-<h5><span class="header-section-number">3.2.2.3.1</span> Data Lakes</h5>
-<p>Un data lake es un repositorio de almacenamiento centralizado que contiene datos de varias fuentes en un formato granular y sin procesar. Puede guardar datos estructurados, semiestructurados o no estructurados, lo que significa que los datos pueden conservarse en un formato más flexible para usarlos en un futuro. Al guardar datos, un data lake los asocia con identificadores y etiquetas de metadatos para poder extraerlos rápidamente.</p>
-<div id="niveles-de-madurez-en-data-lake" class="section level6" number="3.2.2.3.1.1">
-<h6><span class="header-section-number">3.2.2.3.1.1</span> Niveles de madurez en Data Lake</h6>
-<ul>
-<li><p><strong>Data puddle</strong>: Repositorio de datos Single-purpose o datos de un solo proyecto (single-project). Este repositorio utiliza tecnologías de “big data.” Los datos que viven en este Data puddle son utilizados normalmente por un solo equipo o en 1 solo proyecto, por lo que el contenido es conocido y entendido por los miembros del equipo.</p></li>
-<li><p><strong>Data pond</strong>: Una colección de al menos 2 data puddle aunque en tecnologías clásicas de almacenamiento de datos como un datawarehouse o un data mart.</p></li>
-<li><p><strong>Data lake</strong>: También contiene al menos 2 data puddle, sin embargo, se diferencia del data pond en dos cosas:</p>
-<ul>
-<li><p>Permite hacer self-service lo que implica que los usuarios de negocio pueden encontrar y usar los datos que viven en el sin tener que depender de la ayuda del departamento de TI.</p></li>
-<li><p>También tiene datos que los usuarios de negocio pueden querer aunque no haya un proyecto que lo requiera en ese momento.</p></li>
-</ul></li>
-<li><p><strong>Data ocean</strong>: Expande los servicios que permite el data lake a todos los datos de la empresa habilitando la cultura data driven de la compañía.</p></li>
-</ul>
-<p><img src="img/intro01/3-14-1-datalake.png" width="400pt" height="300pt" style="display: block; margin: auto;" /></p>
-</div>
-</div>
-</div>
-<div id="cuál-es-el-análisis-que-necesitamos-hacer" class="section level4" number="3.2.2.4">
-<h4><span class="header-section-number">3.2.2.4</span> ¿Cuál es el análisis que necesitamos hacer?</h4>
-<p>En esta seccion del <em>scoping</em> queremos definir qué tipo de análisis necesitamos hacer con los datos con los que contamos para cumplir con los objetivos definidos y generar las acciones identificadas.</p>
-<p>El análisis puede incluir métodos y herramientas de diferentes disciplinas: ciencias computacionales, ciencia de datos, machine learning, estadística, ciencias sociales.</p>
-<p>Existen distintos tipops de análisis, los 4 más comunes son:</p>
-<ul>
-<li><p><strong>Descripción</strong>: Centrado en entender eventos y comportamientos del pasado. Aunque puede confundirse con business intelligence, debido a que ya definimos objetivos y acciones vamos a desarrollar un producto de datos. Para este tipo de análisis podemos ocupar métodos de aprendizaje no supervisado: clustering.</p></li>
-<li><p><strong>Detección</strong>: Más concentrado en los eventos que están sucediendo. Detección de anomalías.</p></li>
-<li><p><strong>Predicción</strong>: Concentrado en el futuro, prediciendo futuros eventos o comportamientos.</p></li>
-<li><p><strong>Cambio en comportamiento</strong>: Concentrado en entender las causas de cambios en comportamientos de personas eventos, organizaciones, vecindarios, etc.</p></li>
-</ul>
-<p><img src="img/intro01/3-14-1-elegir.jpg" width="500pt" height="400pt" style="display: block; margin: auto;" /></p>
-<p>En esta fase tenemos que responder las siguientes preguntas:</p>
-<ul>
-<li><p>¿Qué tipo de análisis neceistaremos? Puede ser más de uno.</p></li>
-<li><p>¿Cómo vamos a validar el análisis? ¿Qué validaciones se pueden hacer con los datos existentes? ¿Cómo podemos diseñar una prueba en campo para validar el análisis antes de que pongamos el producto en producción.</p></li>
-<li><p>Identificar qué acciones se cubren con cada análisis, debemos tener todas las acciones cubiertas.</p></li>
-</ul>
-</div>
-<div id="ejemplos" class="section level4" number="3.2.2.5">
-<h4><span class="header-section-number">3.2.2.5</span> Ejemplos</h4>
-<p>Los siguientes ejemplos forman parte del trabajo de <a href="http://www.datasciencepublicpolicy.org/home/resources/data-science-project-*scoping*-guide/">DSSG</a>, en cada uno de estos planteamientos intentaremos responder las siguientes preguntas:</p>
-<ul>
-<li>¿Cuál es el objetivo?</li>
-<li>¿Cómo se mide el objetivo?</li>
-<li>¿Qué se optimiza?</li>
-<li>¿Se puede optimizar?</li>
-<li>¿Cuáles son los tradeoffs?</li>
-<li>¿Que implicaciones éticas identificas?</li>
-</ul>
-<ol style="list-style-type: decimal">
-<li><p><strong>Envenenamiento por plomo</strong>: Hace unos años, comenzamos a trabajar con el Departamento de Salud Pública de Chicago para prevenir el envenenamiento por plomo. El objetivo inicial era aumentar la eficacia de sus inspecciones de peligro de plomo. Una forma de lograr ese objetivo sería concentrarse en los hogares que tienen peligros de plomo. Aunque fue útil, este enfoque no lograría su objetivo real, que era evitar que los niños se intoxicaran con plomo. Encontrar un hogar con peligros de plomo y repararlo solo es beneficioso si existe una alta probabilidad de que un niño presente (actualmente o en el futuro) se exponga al plomo. La siguiente iteración del objetivo fue maximizar la cantidad de inspecciones que detectan peligros de plomo en hogares donde hay un niño en riesgo (antes de que el niño se exponga al plomo). Finalmente, llegamos al objetivo final: identificar qué niños corren un alto riesgo de intoxicación por plomo en el futuro y luego dirigir las intervenciones a los hogares de esos niños..</p></li>
-<li><p><strong>High School Graduation</strong>: Uno de los mayores desafíos que enfrentan las escuelas hoy en día es ayudar a sus estudiantes a graduarse (a tiempo). Las tasas de graduación en los EE. UU. Son ~65%. Todos están interesados en identificar a los estudiantes que corren el riesgo de no graduarse a tiempo. Al hablar inicialmente con la mayoría de los distritos escolares, comienzan con un objetivo muy limitado de predecir qué niños es poco probable que se gradúen a tiempo. El primer paso es volver al objetivo de aumentar las tasas de graduación y preguntar si hay un subconjunto específico de estudiantes en riesgo que quieran identificar. ¿Qué pasaría si pudiéramos identificar a los estudiantes que tienen solo un 5% de probabilidades de estar en riesgo frente a los estudiantes que tienen un 95% de probabilidades de no graduarse a tiempo sin apoyo adicional? Si el objetivo es simplemente aumentar las tasas de graduación, es (probablemente) más fácil intervenir e influir en el primer grupo, mientras que el segundo grupo puede ser más desafiante debido a los recursos que necesita. ¿El objetivo es maximizar la probabilidad promedio/media/mediana de graduarse para una clase/escuela o es el objetivo enfocarse en los niños con mayor riesgo y maximizar la probabilidad de graduación del 10% inferior de los estudiantes? ¿O el objetivo es crear más equidad y disminuir la diferencia en la probabilidad de graduación a tiempo entre el cuartil superior y el cuartil inferior? Todos estos son objetivos razonables, pero las escuelas deben comprender, evaluar y decidir qué objetivos les interesan. Esta conversación a menudo los hace pensar más en definir analíticamente cuáles son sus objetivos organizacionales, así como las compensaciones..</p></li>
-<li><p><strong>Inspecciones</strong>: Hemos trabajado en varios proyectos que involucraron inspecciones, como con la EPA (Agencia de Protección Ambiental) y el Departamento de Conservación Ambiental del Estado de Nueva York para ayudarlos a priorizar qué instalaciones inspeccionar para detectar infracciones de eliminación de desechos, con la ciudad de Cincinnati para ayudar a identificar las propiedades en riesgo de violaciones del código para prevenir el deterioro -el proceso a través del cual una ciudad que funcionaba anteriormente, o parte de ella, cae en deterioro y decrepitud-, y con el Grupo del Banco Mundial para ayudarlos a priorizar qué denuncias de fraude y colusión investigar. En la mayoría de los problemas de inspección/investigación, hay muchas más entidades (viviendas, edificios, instalaciones, negocios, contratos) para inspeccionar que los recursos disponibles necesarios para realizar esas inspecciones. El objetivo con el que comienzan la mayoría de estas organizaciones es dirigir sus inspecciones a las entidades que tienen más probabilidades de violar las regulaciones existentes. Ese es un buen comienzo, pero la mayoría de estas organizaciones nunca pueden inspeccionar todas las instalaciones/hogares que pueden no cumplir con las normas, por lo que el objetivo que realmente buscan es la disuasión: reducir la cantidad total de instalaciones que estarán en violación. Un proceso de inspección ideal resultaría entonces en la reducción del número real de violaciones (encontradas o no), lo cual puede no ser lo mismo que un proceso de inspección que tiene como objetivo ser eficiente y aumentar la tasa de aciertos (% de inspección que resulta en violaciones).</p></li>
-<li><p><strong>Programación de la recolección de residuos</strong>: Recientemente comenzamos a trabajar con Sanergy, una empresa social con sede en Kenia. Implementan inodoros portátiles en asentamientos urbanos informales y uno de sus mayores costos es contratar personas para vaciar los inodoros. Hoy en día, todos los inodoros se vacían todos los días, aunque existe una variación en cuánto se usan y cuánto se llenan. Para que puedan crecer y mantener bajos los costos, necesitan un enfoque más adaptable que pueda optimizar el cronograma de vaciado de los inodoros. El objetivo en este caso es asegurarse de no vaciar demasiado el inodoro cuando no está lleno, pero tampoco dejar que permanezca lleno porque entonces no se puede usar. Esto se traduce en una formulación que presiona para vaciar el inodoro lo más cerca posible de estar lleno al 100% sin llegar al 100%.</p></li>
-</ol>
+<p>La heterogeneidad del grupo es fundamental para un buen diseño del muestreo por conglomerados. Por otra parte, los elementos dentro de cada grupo debe ser tan heterogéneos como la población objetivo</p>
+<p>Ejemplo: Una ONG quiere crear una muestra de niñas en 5 ciudades vecinas para obtener información sobre su nivel de educación.</p>
+<p><img src="img/muestreo/1-1-4-tipos-de-muestreo-probabilistico-conglomerados.png" width="450pt" height="250pt" style="display: block; margin: auto;" /></p>
 
-</div>
-</div>
 </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -495,8 +403,8 @@ $('.pipehover_select_one_row tr').hover(function() {
           </div>
         </div>
       </div>
-<a href="intro.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="explora.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="modela.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="agrupa.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
