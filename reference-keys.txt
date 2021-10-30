@@ -85,3 +85,9 @@ dbscan
 algoritmo
 implementación-en-r-2
 ventajas-de-dbscan
+otros
+git-y-github
+qué-es-git
+qué-es-github
+cómo-utilizarlos
+despedida
