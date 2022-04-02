@@ -68,13 +68,14 @@ pre-procesamiento-e-ingeniería-de-datos
 pre-procesamiento-de-datos
 ingeniería-de-datos
 recetas
-pasos-de-recetas
-codificación-de-datos-cualitativos-en-formato-numérico
+pasos-y-estructura-de-recetas
+normalizar-columnas-numéricas
+dicotomización-de-categorías
+codificación-de-datos-cualitativos-nuevos-o-faltantes
+imputaciones
+agregar-o-modificar-columnas
 interacciones
 transformaciones-generales
-ejecutar-el-pre-procesamiento-de-datos
-preparar-la-receta-prep
-extracción-de-datos-bake
 partición-de-datos
 métodos-comunes-para-particionar-datos
 qué-proporción-debería-ser-usada
@@ -85,7 +86,6 @@ v-fold-cross-validation
 medidas-de-ajuste
 cálculo-del-error-1
 validación-cruzada-para-series-de-tiempo
-otros-tipos-de-validación-cruzada
 anexos
 orden-y-estructura-de-proyecto
 plantilla-de-estructura-proyecto
