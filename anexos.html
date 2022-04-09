@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo 6 Anexos | AMAT- Introducción a Ciencia de Datos y Machine Learning</title>
+  <meta name="description" content="AMAT Curso 1 : Introduccion a Ciencia de Datos" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo 6 Anexos | AMAT- Introducción a Ciencia de Datos y Machine Learning" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="AMAT Curso 1 : Introduccion a Ciencia de Datos" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo 6 Anexos | AMAT- Introducción a Ciencia de Datos y Machine Learning" />
+  
+  <meta name="twitter:description" content="AMAT Curso 1 : Introduccion a Ciencia de Datos" />
+  
+
+<meta name="author" content="Karina Lizette Gamboa Puente" />
+<meta name="author" content="Oscar Arturo Bringas López" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="aprendizaje-supervisado-1.html"/>
+
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.10.0/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./"><img src="img/amat-logo.png" width="280"></a></li|
+|:-:|  
+<center>Introducción a Ciencia de Datos y Machine Learning</center>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> BIENVENIDA</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#objetivo"><i class="fa fa-check"></i><b>1.1</b> Objetivo</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#quienes-somos"><i class="fa fa-check"></i><b>1.2</b> ¿Quienes somos?</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#ciencia-de-datos-en-r"><i class="fa fa-check"></i><b>1.3</b> Ciencia de Datos en R</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#estructura-del-curso-actual"><i class="fa fa-check"></i><b>1.4</b> Estructura del curso actual</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="index.html"><a href="index.html#alcances-del-curso"><i class="fa fa-check"></i><b>1.4.1</b> Alcances del curso</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#duración-y-evaluación-del-curso"><i class="fa fa-check"></i><b>1.5</b> Duración y evaluación del curso</a></li>
+<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#recursos-y-dinámica-de-clase"><i class="fa fa-check"></i><b>1.6</b> Recursos y dinámica de clase</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> INTRODUCCIÓN A CIENCIA DE DATOS</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#qué-es-ciencia-de-datos"><i class="fa fa-check"></i><b>2.1</b> ¿Qué es Ciencia de Datos?</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="intro.html"><a href="intro.html#definiendo-conceptos"><i class="fa fa-check"></i><b>2.1.1</b> Definiendo conceptos:</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#objetivo-de-la-ciencia-de-datos"><i class="fa fa-check"></i><b>2.2</b> Objetivo de la Ciencia de Datos</a></li>
+<li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#qué-se-requiere-para-hacer-ciencia-de-datos"><i class="fa fa-check"></i><b>2.3</b> ¿Qué se requiere para hacer Ciencia de Datos?</a></li>
+<li class="chapter" data-level="2.4" data-path="intro.html"><a href="intro.html#aplicaciones-de-ciencia-de-datos"><i class="fa fa-check"></i><b>2.4</b> Aplicaciones de Ciencia de Datos</a></li>
+<li class="chapter" data-level="2.5" data-path="intro.html"><a href="intro.html#tipos-de-aprendizaje"><i class="fa fa-check"></i><b>2.5</b> Tipos de aprendizaje</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="intro.html"><a href="intro.html#aprendizaje-supervisado"><i class="fa fa-check"></i><b>2.5.1</b> Aprendizaje supervisado</a></li>
+<li class="chapter" data-level="2.5.2" data-path="intro.html"><a href="intro.html#aprendizaje-no-supervisado"><i class="fa fa-check"></i><b>2.5.2</b> Aprendizaje no supervisado</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="ciclo.html"><a href="ciclo.html"><i class="fa fa-check"></i><b>3</b> CICLO DE VIDA</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="ciclo.html"><a href="ciclo.html#ciclo-de-un-proyecto-de-ciencia-de-datos"><i class="fa fa-check"></i><b>3.1</b> Ciclo de un proyecto de Ciencia de Datos</a></li>
+<li class="chapter" data-level="3.2" data-path="ciclo.html"><a href="ciclo.html#data-science-scoping"><i class="fa fa-check"></i><b>3.2</b> Data Science <em>scoping</em></a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="ciclo.html"><a href="ciclo.html#data-maturity-framework"><i class="fa fa-check"></i><b>3.2.1</b> Data Maturity Framework</a></li>
+<li class="chapter" data-level="3.2.2" data-path="ciclo.html"><a href="ciclo.html#scoping"><i class="fa fa-check"></i><b>3.2.2</b> Scoping</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="machine-learning-conceptos-básicos.html"><a href="machine-learning-conceptos-básicos.html"><i class="fa fa-check"></i><b>4</b> MACHINE LEARNING: CONCEPTOS BÁSICOS</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="machine-learning-conceptos-básicos.html"><a href="machine-learning-conceptos-básicos.html#conocimiento-previo-de-los-datos-eda-y-geda"><i class="fa fa-check"></i><b>4.1</b> Conocimiento previo de los datos: EDA y GEDA</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="machine-learning-conceptos-básicos.html"><a href="machine-learning-conceptos-básicos.html#eda-análisis-exploratorio-de-datos"><i class="fa fa-check"></i><b>4.1.1</b> EDA: Análisis Exploratorio de Datos</a></li>
+<li class="chapter" data-level="4.1.2" data-path="machine-learning-conceptos-básicos.html"><a href="machine-learning-conceptos-básicos.html#geda-análisis-exploratorio-de-datos-gráficos"><i class="fa fa-check"></i><b>4.1.2</b> GEDA: Análisis Exploratorio de Datos Gráficos</a></li>
+<li class="chapter" data-level="4.1.3" data-path="machine-learning-conceptos-básicos.html"><a href="machine-learning-conceptos-básicos.html#uso-decisión-e-implementación-de-técnicas-gráficas."><i class="fa fa-check"></i><b>4.1.3</b> Uso, decisión e implementación de técnicas gráficas.</a></li>
+<li class="chapter" data-level="4.1.4" data-path="machine-learning-conceptos-básicos.html"><a href="machine-learning-conceptos-básicos.html#ggplot2"><i class="fa fa-check"></i><b>4.1.4</b> Ggplot2</a></li>
+<li class="chapter" data-level="4.1.5" data-path="machine-learning-conceptos-básicos.html"><a href="machine-learning-conceptos-básicos.html#eda-y-geda-con-r"><i class="fa fa-check"></i><b>4.1.5</b> EDA y GEDA con R</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="machine-learning-conceptos-básicos.html"><a href="machine-learning-conceptos-básicos.html#ml-y-algoritmos"><i class="fa fa-check"></i><b>4.2</b> ML y Algoritmos</a></li>
+<li class="chapter" data-level="4.3" data-path="machine-learning-conceptos-básicos.html"><a href="machine-learning-conceptos-básicos.html#análisis-supervisado-vs-no-supervisado"><i class="fa fa-check"></i><b>4.3</b> Análisis Supervisado vs No supervisado</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="machine-learning-conceptos-básicos.html"><a href="machine-learning-conceptos-básicos.html#regresión-vs-clasificación"><i class="fa fa-check"></i><b>4.3.1</b> Regresión vs clasificación</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="machine-learning-conceptos-básicos.html"><a href="machine-learning-conceptos-básicos.html#sesgo-vs-varianza"><i class="fa fa-check"></i><b>4.4</b> Sesgo vs varianza</a></li>
+<li class="chapter" data-level="4.5" data-path="machine-learning-conceptos-básicos.html"><a href="machine-learning-conceptos-básicos.html#pre-procesamiento-e-ingeniería-de-datos"><i class="fa fa-check"></i><b>4.5</b> Pre-procesamiento e ingeniería de datos</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="machine-learning-conceptos-básicos.html"><a href="machine-learning-conceptos-básicos.html#pre-procesamiento-de-datos"><i class="fa fa-check"></i><b>4.5.1</b> Pre-procesamiento de datos</a></li>
+<li class="chapter" data-level="4.5.2" data-path="machine-learning-conceptos-básicos.html"><a href="machine-learning-conceptos-básicos.html#ingeniería-de-datos"><i class="fa fa-check"></i><b>4.5.2</b> Ingeniería de datos</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="machine-learning-conceptos-básicos.html"><a href="machine-learning-conceptos-básicos.html#recetas"><i class="fa fa-check"></i><b>4.6</b> Recetas</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="machine-learning-conceptos-básicos.html"><a href="machine-learning-conceptos-básicos.html#pasos-y-estructura-de-recetas"><i class="fa fa-check"></i><b>4.6.1</b> Pasos y estructura de recetas</a></li>
+<li class="chapter" data-level="4.6.2" data-path="machine-learning-conceptos-básicos.html"><a href="machine-learning-conceptos-básicos.html#imputaciones"><i class="fa fa-check"></i><b>4.6.2</b> Imputaciones</a></li>
+<li class="chapter" data-level="4.6.3" data-path="machine-learning-conceptos-básicos.html"><a href="machine-learning-conceptos-básicos.html#agregar-o-modificar-columnas"><i class="fa fa-check"></i><b>4.6.3</b> Agregar o modificar columnas</a></li>
+<li class="chapter" data-level="4.6.4" data-path="machine-learning-conceptos-básicos.html"><a href="machine-learning-conceptos-básicos.html#interacciones"><i class="fa fa-check"></i><b>4.6.4</b> Interacciones</a></li>
+<li class="chapter" data-level="4.6.5" data-path="machine-learning-conceptos-básicos.html"><a href="machine-learning-conceptos-básicos.html#transformaciones-generales"><i class="fa fa-check"></i><b>4.6.5</b> Transformaciones generales</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="machine-learning-conceptos-básicos.html"><a href="machine-learning-conceptos-básicos.html#partición-de-datos"><i class="fa fa-check"></i><b>4.7</b> Partición de datos</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="machine-learning-conceptos-básicos.html"><a href="machine-learning-conceptos-básicos.html#métodos-comunes-para-particionar-datos"><i class="fa fa-check"></i><b>4.7.1</b> Métodos comunes para particionar datos</a></li>
+<li class="chapter" data-level="4.7.2" data-path="machine-learning-conceptos-básicos.html"><a href="machine-learning-conceptos-básicos.html#qué-proporción-debería-ser-usada"><i class="fa fa-check"></i><b>4.7.2</b> ¿Qué proporción debería ser usada?</a></li>
+<li class="chapter" data-level="4.7.3" data-path="machine-learning-conceptos-básicos.html"><a href="machine-learning-conceptos-básicos.html#conjunto-de-validación"><i class="fa fa-check"></i><b>4.7.3</b> Conjunto de validación</a></li>
+<li class="chapter" data-level="4.7.4" data-path="machine-learning-conceptos-básicos.html"><a href="machine-learning-conceptos-básicos.html#leave-one-out-cross-validation"><i class="fa fa-check"></i><b>4.7.4</b> Leave-one-out cross-validation</a></li>
+<li class="chapter" data-level="4.7.5" data-path="machine-learning-conceptos-básicos.html"><a href="machine-learning-conceptos-básicos.html#v-fold-cross-validation"><i class="fa fa-check"></i><b>4.7.5</b> V Fold Cross Validation</a></li>
+<li class="chapter" data-level="4.7.6" data-path="machine-learning-conceptos-básicos.html"><a href="machine-learning-conceptos-básicos.html#medidas-de-ajuste"><i class="fa fa-check"></i><b>4.7.6</b> Medidas de ajuste</a></li>
+<li class="chapter" data-level="4.7.7" data-path="machine-learning-conceptos-básicos.html"><a href="machine-learning-conceptos-básicos.html#validación-cruzada-para-series-de-tiempo"><i class="fa fa-check"></i><b>4.7.7</b> Validación cruzada para series de tiempo</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html"><i class="fa fa-check"></i><b>5</b> APRENDIZAJE SUPERVISADO</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#datos-y-tipos-de-modelos"><i class="fa fa-check"></i><b>5.1</b> Datos y tipos de modelos:</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#regresión-preparación-de-datos"><i class="fa fa-check"></i><b>5.1.1</b> Regresión: Preparación de datos</a></li>
+<li class="chapter" data-level="5.1.2" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#clasificación-preparación-de-datos"><i class="fa fa-check"></i><b>5.1.2</b> Clasificación: Preparación de Datos</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#regresión-lineal"><i class="fa fa-check"></i><b>5.2</b> Regresión Lineal</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#ajuste-de-modelo"><i class="fa fa-check"></i><b>5.2.1</b> Ajuste de modelo</a></li>
+<li class="chapter" data-level="5.2.2" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#residuos-del-modelo"><i class="fa fa-check"></i><b>5.2.2</b> Residuos del modelo</a></li>
+<li class="chapter" data-level="5.2.3" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#métricas-de-desempeño"><i class="fa fa-check"></i><b>5.2.3</b> Métricas de desempeño</a></li>
+<li class="chapter" data-level="5.2.4" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#implementación-en-r"><i class="fa fa-check"></i><b>5.2.4</b> Implementación en R</a></li>
+<li class="chapter" data-level="5.2.5" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#coeficientes-del-modelo"><i class="fa fa-check"></i><b>5.2.5</b> Coeficientes del modelo</a></li>
+<li class="chapter" data-level="5.2.6" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#métricas-de-desempeño-1"><i class="fa fa-check"></i><b>5.2.6</b> Métricas de desempeño</a></li>
+<li class="chapter" data-level="5.2.7" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#métodos-se-selección-de-variables"><i class="fa fa-check"></i><b>5.2.7</b> Métodos se selección de variables</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#regresión-logística"><i class="fa fa-check"></i><b>5.3</b> Regresión Logística</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#función-sigmoide"><i class="fa fa-check"></i><b>5.3.1</b> Función sigmoide</a></li>
+<li class="chapter" data-level="5.3.2" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#ajuste-del-modelo"><i class="fa fa-check"></i><b>5.3.2</b> Ajuste del modelo</a></li>
+<li class="chapter" data-level="5.3.3" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#clasificación-1"><i class="fa fa-check"></i><b>5.3.3</b> Clasificación</a></li>
+<li class="chapter" data-level="5.3.4" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#métricas-de-desempeño-2"><i class="fa fa-check"></i><b>5.3.4</b> Métricas de desempeño</a></li>
+<li class="chapter" data-level="5.3.5" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#implementación-en-r-1"><i class="fa fa-check"></i><b>5.3.5</b> Implementación en R</a></li>
+<li class="chapter" data-level="5.3.6" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#métricas-de-desempeño-3"><i class="fa fa-check"></i><b>5.3.6</b> Métricas de desempeño</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="anexos.html"><a href="anexos.html"><i class="fa fa-check"></i><b>6</b> Anexos</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="anexos.html"><a href="anexos.html#orden-y-estructura-de-proyecto"><i class="fa fa-check"></i><b>6.1</b> Orden y estructura de proyecto</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="anexos.html"><a href="anexos.html#plantilla-de-estructura-proyecto"><i class="fa fa-check"></i><b>6.1.1</b> Plantilla de estructura proyecto</a></li>
+<li class="chapter" data-level="6.1.2" data-path="anexos.html"><a href="anexos.html#reproducibilidad"><i class="fa fa-check"></i><b>6.1.2</b> Reproducibilidad</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="anexos.html"><a href="anexos.html#referencias"><i class="fa fa-check"></i><b>6.2</b> Referencias:</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="./"><img src="img/amat-logo.png" width="280"></a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">AMAT- Introducción a Ciencia de Datos y Machine Learning</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="anexos" class="section level1" number="6">
+<h1><span class="header-section-number">Capítulo 6</span> Anexos</h1>
+<div class="watermark">
+<p><img src="img/03-viz/header.png" width="400"/></p>
+</div>
+<div id="orden-y-estructura-de-proyecto" class="section level2" number="6.1">
+<h2><span class="header-section-number">6.1</span> Orden y estructura de proyecto</h2>
+<p>Resulta elemental contar con una adecuada <strong>estructura de carpetas que permitan al analista mantener orden y control a lo largo de todo el proyecto</strong>. Gran parte del caos en los problemas de analítica de datos nace desde el momento en que no se sabe en donde ubicar cada uno de los archivos necesarios para el proyecto.</p>
+<div id="plantilla-de-estructura-proyecto" class="section level3" number="6.1.1">
+<h3><span class="header-section-number">6.1.1</span> Plantilla de estructura proyecto</h3>
+<p>En esta sección, se presenta una introducción a la librería <a href="http://projecttemplate.net/"><strong>ProjectTemplate</strong></a>, la cual facilita una estructura predeterminada que ayudará como punto de partida para mantener orden y control en cada momento del proyecto.</p>
+<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="anexos.html#cb117-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ProjectTemplate)</span>
+<span id="cb117-2"><a href="anexos.html#cb117-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb117-3"><a href="anexos.html#cb117-3" aria-hidden="true" tabindex="-1"></a>ProjectTemplate<span class="sc">::</span><span class="fu">create.project</span>(<span class="at">project.name =</span> <span class="st">&#39;intro2dsml&#39;</span>, <span class="at">rstudio.project =</span> T)</span></code></pre></div>
+<p>ProjectTemplate::<strong>create.project()</strong> creará toda la estructura de carpetas para un nuevo proyecto. Configurará todos los directorios relevantes y sus contenidos iniciales. Para aquellos que solo desean la funcionalidad mínima, el argumento de <em>template</em> se puede establecer en <em>minimal</em> para crear un subconjunto de directorios predeterminados de ProjectTemplate.</p>
+<p><img src="img/01-intro/18_folder_structure.png" width="600px" height="300px" style="display: block; margin: auto;" /></p>
+<ul>
+<li><p><strong>cache:</strong> En esta carpeta se almacenarán los datos que desear cargarse automáticamente cuando se cargue la sesión del proyecto.</p></li>
+<li><p><strong>config:</strong> Se realiza la configuración de <em>R</em> y su sesión, la cual será establecida cada que se abra el proyecto.</p></li>
+<li><p><strong>data:</strong> Se almacenan las fuentes de información crudas necesarias en el proyecto. En caso de encontrarse codificadas en algún formato de archivo soportado por la librería, automáticamente serán cargadas a la sesión con la función <code>load.project()</code></p></li>
+<li><p><strong>diagnostics:</strong> En este folder puedes almacenar cualquier script usado para realizar diagnósticos sobre los datos. Es particularmente útil para al análisis de elementos corruptos o problemáticos dentro del conjunto de datos.</p></li>
+<li><p><strong>doc:</strong> En este folder puede almacenarse cualquier documentación que haya escrito sobre el análisis. También se puede usar como directorio raíz para las páginas de <a href="https://github.com/"><strong>GitHub</strong></a> para crear un sitio web de proyecto.</p></li>
+<li><p><strong>graphs:</strong> Sirve para almacenar las gráficas producidas por el análisis</p></li>
+<li><p><strong>lib:</strong> Aquí se almacenarán todos los archivos que proporcionen una funcionalidad útil para su trabajo, pero que no constituyan un análisis estadístico per se. Específicamente, debe usar el script lib/helpers.R para organizar cualquier función que use en su proyecto que no sea lo suficientemente general como para pertenecer a un paquete. Si tiene una configuración específica del proyecto que le gustaría almacenar en el objeto de configuración, puede especificarla en lib/globals.R.</p></li>
+<li><p><strong>logs:</strong> Aquí puede almacenarse un archivo de registro de cualquier trabajo que haya realizado en este proyecto. Si va a registrar su trabajo, se recomienda utilizar el paquete <em>log4r</em>, que ProjectTemplate cargará automáticamente si activa la opción de configuración de registro. El nivel de registro se puede establecer a través de la configuración <em>logging_level</em> en la configuración, el valor predeterminado es “INFO”.</p></li>
+<li><p><strong>munge:</strong> En este folder puede almacenarse cualquier código de preprocesamiento o manipulación de datos para el proyecto. Por ejemplo, si necesita agregar columnas en tiempo de ejecución, fusionar conjuntos de datos normalizados o censurar globalmente cualquier punto de datos, ese código debe almacenarse en el directorio munge. Los scripts de preprocesamiento almacenados en munge se ejecutarán en orden alfabético cuando se llame a la función <em>load.project()</em>, por lo que debe anteponerse números a los nombres de archivo para indicar su orden secuencial.</p></li>
+<li><p><strong>profiling:</strong> Aquí puede almacenar cualquier script que use para comparar y cronometrar su código.</p></li>
+<li><p><strong>reports:</strong> Aquí puede almacenar cualquier informe de salida, como versiones de tablas HTML o LaTeX, que produzca. Los documentos de sweave o brew también deben ir en el directorio de informes.</p></li>
+<li><p><strong>src:</strong> Aquí se almacenarán los <strong>scripts de análisis estadístico</strong> finales. Debe agregar el siguiente fragmento de código al comienzo de cada secuencia de comandos de análisis: <code>library('ProjectTemplate); load.project()</code>. También debe hacer todo lo posible para asegurarse de que cualquier código compartido entre los análisis en src se mueva al directorio munge; si lo hace, puede ejecutar todos los análisis en el directorio src <strong>en paralelo</strong>. Una versión futura de ProjectTemplate proporcionará herramientas para ejecutar automáticamente cada análisis individual de src en paralelo.</p></li>
+<li><p><strong>tests:</strong> Aquí puede almacenarse cualquier caso de prueba para las funciones que ha escrito. Los archivos de prueba deben usar pruebas de estilo <em>testthat</em> para que pueda llamar a la función <code>test.project()</code> para ejecutar automáticamente todo su código de prueba.</p></li>
+<li><p><em>README:</em> En este archivo, debe escribir algunas notas para ayudar a orientar a los recién llegados a su proyecto.</p></li>
+<li><p><em>TODO:</em> En este archivo, debe escribir una lista de futuras mejoras y correcciones de errores que planea realizar en sus análisis.</p></li>
+</ul>
+<p>Si algunas o todas estas carpetas resultan innecesarias, puede comenzarse con una versión simplificada a través del comando:</p>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="anexos.html#cb118-1" aria-hidden="true" tabindex="-1"></a><span class="fu">create.project</span>(<span class="at">project.name =</span> <span class="st">&#39;intro2dsml&#39;</span>, <span class="at">template=</span><span class="st">&#39;minimal&#39;</span>)</span></code></pre></div>
+<p><img src="img/01-intro/19_create_project_minimal.png" width="600px" height="300px" style="display: block; margin: auto;" /></p>
+</div>
+<div id="reproducibilidad" class="section level3" number="6.1.2">
+<h3><span class="header-section-number">6.1.2</span> Reproducibilidad</h3>
+<p>Trabajar de esta manera permitirá que un proyecto sea reproducible por cualquier persona con el acceso y los permisos adecuados para colaborar. Sin importar que existan nuevas versiones de R o sus librerías, este ambiente virtual creado será reisiliente a tales cambios, permitiendo que el proyecto perdure a lo largo del tiempo.</p>
+<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="anexos.html#cb119-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(renv)</span>
+<span id="cb119-2"><a href="anexos.html#cb119-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb119-3"><a href="anexos.html#cb119-3" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">init</span>()</span></code></pre></div>
+<p>renv::<strong>init()</strong> inicializa un nuevo entorno local de proyecto con una biblioteca <em>R</em> privada. La función renv::init() intenta garantizar que la biblioteca del proyecto recién creada incluya todos los paquetes de <em>R</em> utilizados actualmente por el proyecto. Lo hace rastreando archivos R dentro del proyecto en busca de dependencias. Los paquetes descubiertos luego se instalan en la biblioteca del proyecto, que también intentará ahorrar tiempo copiando paquetes de la biblioteca del usuario (en lugar de reinstalarlos desde CRAN) según corresponda.</p>
+<p>Al usar <em>renv</em>, es posible “salvar” y “cargar” el estado de las librerías del proyecto a través de las siguientes funciones:</p>
+<blockquote>
+<p><strong>renv::snapshot()</strong> guarda el estado del proyecto en el archivo renv.lock</p>
+</blockquote>
+<blockquote>
+<p><strong>renv::restore()</strong> Restablece el estado del proyecto desde la última actualización de renv.lock.</p>
+</blockquote>
+</div>
+</div>
+<div id="referencias" class="section level2" number="6.2">
+<h2><span class="header-section-number">6.2</span> Referencias:</h2>
+<ul>
+<li><a href="https://towardsdatascience.com/exploratory-data-analysis-8fc1cb20fd15">What is Exploratory Data Analysis?</a></li>
+<li><a href="https://www.itl.nist.gov/div898/handbook/eda/section1/eda11.htm">What is EDA?</a></li>
+<li><a href="https://www.pgconocimiento.com/diagrama-boxplot/">Diagrama BoxPlot</a></li>
+<li><a href="https://ggplot2-book.org/">Ggplot2: Elegant Graphics for Data Analysis</a></li>
+<li><a href="https://plotly.com/r/">Plotly</a></li>
+</ul>
+
+</div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+
+$('.pipehover_incremental tr').hover(function() {
+  $(this).removeClass()
+  $(this).prevAll().removeClass()
+  $(this).nextAll().removeClass()
+  $(this).addClass('hover');
+  $(this).prevAll().addClass('hover');
+  $(this).closest('div').next().find('img').attr("src", $(this).attr("link"));
+});
+
+
+$('.pipehover_select_one_row tr').hover(function() {
+  $(this).removeClass()
+  $(this).prevAll().removeClass()
+  $(this).nextAll().removeClass()
+  $(this).addClass('hover');
+  $(this).closest('div').next().find('img').attr("src", $(this).attr("link"));
+});
+
+</script>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="aprendizaje-supervisado-1.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Introducción a Ciencia de Datos y Machine Learning.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
