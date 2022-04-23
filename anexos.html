@@ -250,6 +250,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.3.5" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#implementación-en-r-1"><i class="fa fa-check"></i><b>5.3.5</b> Implementación en R</a></li>
 <li class="chapter" data-level="5.3.6" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#métricas-de-desempeño-3"><i class="fa fa-check"></i><b>5.3.6</b> Métricas de desempeño</a></li>
 </ul></li>
+<li class="chapter" data-level="5.4" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#regularización"><i class="fa fa-check"></i><b>5.4</b> Regularización</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#regularización-ridge"><i class="fa fa-check"></i><b>5.4.1</b> Regularización Ridge</a></li>
+<li class="chapter" data-level="5.4.2" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#regularización-lasso"><i class="fa fa-check"></i><b>5.4.2</b> Regularización Lasso</a></li>
+<li class="chapter" data-level="5.4.3" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#comparación-entre-ridge-y-lasso"><i class="fa fa-check"></i><b>5.4.3</b> Comparación entre Ridge y Lasso</a></li>
+<li class="chapter" data-level="5.4.4" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#elasticnet"><i class="fa fa-check"></i><b>5.4.4</b> ElasticNet</a></li>
+<li class="chapter" data-level="5.4.5" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#elasticnet-para-regresión-lineal"><i class="fa fa-check"></i><b>5.4.5</b> ElasticNet para regresión lineal</a></li>
+<li class="chapter" data-level="5.4.6" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#elasticnet-para-regresión-logística"><i class="fa fa-check"></i><b>5.4.6</b> ElasticNet para regresión logística</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#k-nearest-neighbor"><i class="fa fa-check"></i><b>5.5</b> K-Nearest-Neighbor</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#clasificación-2"><i class="fa fa-check"></i><b>5.5.1</b> Clasificación</a></li>
+<li class="chapter" data-level="5.5.2" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#regresión-1"><i class="fa fa-check"></i><b>5.5.2</b> Regresión</a></li>
+<li class="chapter" data-level="5.5.3" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#ajuste-del-modelo-1"><i class="fa fa-check"></i><b>5.5.3</b> Ajuste del modelo</a></li>
+<li class="chapter" data-level="5.5.4" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#implementación-en-r-2"><i class="fa fa-check"></i><b>5.5.4</b> Implementación en R</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="anexos.html"><a href="anexos.html"><i class="fa fa-check"></i><b>6</b> Anexos</a>
 <ul>
@@ -291,9 +307,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="plantilla-de-estructura-proyecto" class="section level3" number="6.1.1">
 <h3><span class="header-section-number">6.1.1</span> Plantilla de estructura proyecto</h3>
 <p>En esta sección, se presenta una introducción a la librería <a href="http://projecttemplate.net/"><strong>ProjectTemplate</strong></a>, la cual facilita una estructura predeterminada que ayudará como punto de partida para mantener orden y control en cada momento del proyecto.</p>
-<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="anexos.html#cb117-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ProjectTemplate)</span>
-<span id="cb117-2"><a href="anexos.html#cb117-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb117-3"><a href="anexos.html#cb117-3" aria-hidden="true" tabindex="-1"></a>ProjectTemplate<span class="sc">::</span><span class="fu">create.project</span>(<span class="at">project.name =</span> <span class="st">&#39;intro2dsml&#39;</span>, <span class="at">rstudio.project =</span> T)</span></code></pre></div>
+<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="anexos.html#cb188-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ProjectTemplate)</span>
+<span id="cb188-2"><a href="anexos.html#cb188-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb188-3"><a href="anexos.html#cb188-3" aria-hidden="true" tabindex="-1"></a>ProjectTemplate<span class="sc">::</span><span class="fu">create.project</span>(<span class="at">project.name =</span> <span class="st">&#39;intro2dsml&#39;</span>, <span class="at">rstudio.project =</span> T)</span></code></pre></div>
 <p>ProjectTemplate::<strong>create.project()</strong> creará toda la estructura de carpetas para un nuevo proyecto. Configurará todos los directorios relevantes y sus contenidos iniciales. Para aquellos que solo desean la funcionalidad mínima, el argumento de <em>template</em> se puede establecer en <em>minimal</em> para crear un subconjunto de directorios predeterminados de ProjectTemplate.</p>
 <p><img src="img/01-intro/18_folder_structure.png" width="600px" height="300px" style="display: block; margin: auto;" /></p>
 <ul>
@@ -314,15 +330,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p><em>TODO:</em> En este archivo, debe escribir una lista de futuras mejoras y correcciones de errores que planea realizar en sus análisis.</p></li>
 </ul>
 <p>Si algunas o todas estas carpetas resultan innecesarias, puede comenzarse con una versión simplificada a través del comando:</p>
-<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="anexos.html#cb118-1" aria-hidden="true" tabindex="-1"></a><span class="fu">create.project</span>(<span class="at">project.name =</span> <span class="st">&#39;intro2dsml&#39;</span>, <span class="at">template=</span><span class="st">&#39;minimal&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="anexos.html#cb189-1" aria-hidden="true" tabindex="-1"></a><span class="fu">create.project</span>(<span class="at">project.name =</span> <span class="st">&#39;intro2dsml&#39;</span>, <span class="at">template=</span><span class="st">&#39;minimal&#39;</span>)</span></code></pre></div>
 <p><img src="img/01-intro/19_create_project_minimal.png" width="600px" height="300px" style="display: block; margin: auto;" /></p>
 </div>
 <div id="reproducibilidad" class="section level3" number="6.1.2">
 <h3><span class="header-section-number">6.1.2</span> Reproducibilidad</h3>
 <p>Trabajar de esta manera permitirá que un proyecto sea reproducible por cualquier persona con el acceso y los permisos adecuados para colaborar. Sin importar que existan nuevas versiones de R o sus librerías, este ambiente virtual creado será reisiliente a tales cambios, permitiendo que el proyecto perdure a lo largo del tiempo.</p>
-<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="anexos.html#cb119-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(renv)</span>
-<span id="cb119-2"><a href="anexos.html#cb119-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-3"><a href="anexos.html#cb119-3" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">init</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="anexos.html#cb190-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(renv)</span>
+<span id="cb190-2"><a href="anexos.html#cb190-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb190-3"><a href="anexos.html#cb190-3" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">init</span>()</span></code></pre></div>
 <p>renv::<strong>init()</strong> inicializa un nuevo entorno local de proyecto con una biblioteca <em>R</em> privada. La función renv::init() intenta garantizar que la biblioteca del proyecto recién creada incluya todos los paquetes de <em>R</em> utilizados actualmente por el proyecto. Lo hace rastreando archivos R dentro del proyecto en busca de dependencias. Los paquetes descubiertos luego se instalan en la biblioteca del proyecto, que también intentará ahorrar tiempo copiando paquetes de la biblioteca del usuario (en lugar de reinstalarlos desde CRAN) según corresponda.</p>
 <p>Al usar <em>renv</em>, es posible “salvar” y “cargar” el estado de las librerías del proyecto a través de las siguientes funciones:</p>
 <blockquote>
