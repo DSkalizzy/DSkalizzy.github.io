@@ -266,6 +266,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.5.3" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#ajuste-del-modelo-1"><i class="fa fa-check"></i><b>5.5.3</b> Ajuste del modelo</a></li>
 <li class="chapter" data-level="5.5.4" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#implementación-en-r-2"><i class="fa fa-check"></i><b>5.5.4</b> Implementación en R</a></li>
 </ul></li>
+<li class="chapter" data-level="5.6" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#árboles-de-decisión"><i class="fa fa-check"></i><b>5.6</b> Árboles de decisión</a>
+<ul>
+<li class="chapter" data-level="5.6.1" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#ajuste-del-modelo-2"><i class="fa fa-check"></i><b>5.6.1</b> Ajuste del modelo</a></li>
+<li class="chapter" data-level="5.6.2" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#implementación-en-r-3"><i class="fa fa-check"></i><b>5.6.2</b> Implementación en R</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#bagging"><i class="fa fa-check"></i><b>5.7</b> Bagging</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="anexos.html"><a href="anexos.html"><i class="fa fa-check"></i><b>6</b> Anexos</a>
 <ul>
@@ -307,9 +313,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="plantilla-de-estructura-proyecto" class="section level3" number="6.1.1">
 <h3><span class="header-section-number">6.1.1</span> Plantilla de estructura proyecto</h3>
 <p>En esta sección, se presenta una introducción a la librería <a href="http://projecttemplate.net/"><strong>ProjectTemplate</strong></a>, la cual facilita una estructura predeterminada que ayudará como punto de partida para mantener orden y control en cada momento del proyecto.</p>
-<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="anexos.html#cb188-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ProjectTemplate)</span>
-<span id="cb188-2"><a href="anexos.html#cb188-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb188-3"><a href="anexos.html#cb188-3" aria-hidden="true" tabindex="-1"></a>ProjectTemplate<span class="sc">::</span><span class="fu">create.project</span>(<span class="at">project.name =</span> <span class="st">&#39;intro2dsml&#39;</span>, <span class="at">rstudio.project =</span> T)</span></code></pre></div>
+<div class="sourceCode" id="cb219"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb219-1"><a href="anexos.html#cb219-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ProjectTemplate)</span>
+<span id="cb219-2"><a href="anexos.html#cb219-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb219-3"><a href="anexos.html#cb219-3" aria-hidden="true" tabindex="-1"></a>ProjectTemplate<span class="sc">::</span><span class="fu">create.project</span>(<span class="at">project.name =</span> <span class="st">&#39;intro2dsml&#39;</span>, <span class="at">rstudio.project =</span> T)</span></code></pre></div>
 <p>ProjectTemplate::<strong>create.project()</strong> creará toda la estructura de carpetas para un nuevo proyecto. Configurará todos los directorios relevantes y sus contenidos iniciales. Para aquellos que solo desean la funcionalidad mínima, el argumento de <em>template</em> se puede establecer en <em>minimal</em> para crear un subconjunto de directorios predeterminados de ProjectTemplate.</p>
 <p><img src="img/01-intro/18_folder_structure.png" width="600px" height="300px" style="display: block; margin: auto;" /></p>
 <ul>
@@ -330,15 +336,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p><em>TODO:</em> En este archivo, debe escribir una lista de futuras mejoras y correcciones de errores que planea realizar en sus análisis.</p></li>
 </ul>
 <p>Si algunas o todas estas carpetas resultan innecesarias, puede comenzarse con una versión simplificada a través del comando:</p>
-<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="anexos.html#cb189-1" aria-hidden="true" tabindex="-1"></a><span class="fu">create.project</span>(<span class="at">project.name =</span> <span class="st">&#39;intro2dsml&#39;</span>, <span class="at">template=</span><span class="st">&#39;minimal&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb220"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb220-1"><a href="anexos.html#cb220-1" aria-hidden="true" tabindex="-1"></a><span class="fu">create.project</span>(<span class="at">project.name =</span> <span class="st">&#39;intro2dsml&#39;</span>, <span class="at">template=</span><span class="st">&#39;minimal&#39;</span>)</span></code></pre></div>
 <p><img src="img/01-intro/19_create_project_minimal.png" width="600px" height="300px" style="display: block; margin: auto;" /></p>
 </div>
 <div id="reproducibilidad" class="section level3" number="6.1.2">
 <h3><span class="header-section-number">6.1.2</span> Reproducibilidad</h3>
 <p>Trabajar de esta manera permitirá que un proyecto sea reproducible por cualquier persona con el acceso y los permisos adecuados para colaborar. Sin importar que existan nuevas versiones de R o sus librerías, este ambiente virtual creado será reisiliente a tales cambios, permitiendo que el proyecto perdure a lo largo del tiempo.</p>
-<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="anexos.html#cb190-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(renv)</span>
-<span id="cb190-2"><a href="anexos.html#cb190-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb190-3"><a href="anexos.html#cb190-3" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">init</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb221"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb221-1"><a href="anexos.html#cb221-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(renv)</span>
+<span id="cb221-2"><a href="anexos.html#cb221-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb221-3"><a href="anexos.html#cb221-3" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">init</span>()</span></code></pre></div>
 <p>renv::<strong>init()</strong> inicializa un nuevo entorno local de proyecto con una biblioteca <em>R</em> privada. La función renv::init() intenta garantizar que la biblioteca del proyecto recién creada incluya todos los paquetes de <em>R</em> utilizados actualmente por el proyecto. Lo hace rastreando archivos R dentro del proyecto en busca de dependencias. Los paquetes descubiertos luego se instalan en la biblioteca del proyecto, que también intentará ahorrar tiempo copiando paquetes de la biblioteca del usuario (en lugar de reinstalarlos desde CRAN) según corresponda.</p>
 <p>Al usar <em>renv</em>, es posible “salvar” y “cargar” el estado de las librerías del proyecto a través de las siguientes funciones:</p>
 <blockquote>
@@ -431,7 +437,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["Introducción a Ciencia de Datos y Machine Learning.pdf"],
+"download": ["amt22_02intro2ml1.pdf"],
 "search": {
 "engine": "fuse",
 "options": null

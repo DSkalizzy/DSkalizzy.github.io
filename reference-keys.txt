@@ -132,6 +132,16 @@ métodos-de-cálculo-de-la-distancia-entre-observaciones
 implementación-en-r-2
 regresión-2
 clasificación-3
+árboles-de-decisión
+ajuste-del-modelo-2
+attribute-selective-measure-asm
+cuándo-dejar-de-dividir-un-nodo
+cuándo-podar-un-árbol
+implementación-en-r-3
+regresión-3
+métricas-de-desempeño-4
+clasificación-4
+bagging
 anexos
 orden-y-estructura-de-proyecto
 plantilla-de-estructura-proyecto
