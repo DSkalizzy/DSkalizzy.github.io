@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Capítulo 3 CICLO DE VIDA | AMAT- Introducción a Ciencia de Datos y Machine Learning</title>
   <meta name="description" content="AMAT Curso 1 : Introduccion a Ciencia de Datos" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Capítulo 3 CICLO DE VIDA | AMAT- Introducción a Ciencia de Datos y Machine Learning" />
   <meta property="og:type" content="book" />
@@ -33,9 +33,8 @@
   
 <link rel="prev" href="intro.html"/>
 <link rel="next" href="machine-learning-conceptos-básicos.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
-<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<script src="libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="libs/jquery-3.5.1/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -43,6 +42,7 @@
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
 
 
 
@@ -272,6 +272,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.6.2" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#implementación-en-r-3"><i class="fa fa-check"></i><b>5.6.2</b> Implementación en R</a></li>
 </ul></li>
 <li class="chapter" data-level="5.7" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#bagging"><i class="fa fa-check"></i><b>5.7</b> Bagging</a></li>
+<li class="chapter" data-level="5.8" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#random-forest"><i class="fa fa-check"></i><b>5.8</b> Random Forest</a>
+<ul>
+<li class="chapter" data-level="5.8.1" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#qué-es"><i class="fa fa-check"></i><b>5.8.1</b> ¿Qué es?</a></li>
+<li class="chapter" data-level="5.8.2" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#características-de-los-bosques-aleatorios"><i class="fa fa-check"></i><b>5.8.2</b> Características de los bosques aleatorios</a></li>
+<li class="chapter" data-level="5.8.3" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#aplicar-árboles-de-decisión-en-un-bosque-aleatorio"><i class="fa fa-check"></i><b>5.8.3</b> Aplicar árboles de decisión en un bosque aleatorio</a></li>
+<li class="chapter" data-level="5.8.4" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#ventajas-y-desventjas-de-bosques-aleatorios"><i class="fa fa-check"></i><b>5.8.4</b> Ventajas y desventjas de bosques aleatorios</a></li>
+<li class="chapter" data-level="5.8.5" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#bosques-aleatorios-para-modelo-de-regresión"><i class="fa fa-check"></i><b>5.8.5</b> Bosques aleatorios para modelo de regresión</a></li>
+<li class="chapter" data-level="5.8.6" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#bosques-aleatorios-para-modelo-de-clasificación"><i class="fa fa-check"></i><b>5.8.6</b> Bosques aleatorios para modelo de clasificación</a></li>
+<li class="chapter" data-level="5.8.7" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#importancia-de-las-variables"><i class="fa fa-check"></i><b>5.8.7</b> Importancia de las variables</a></li>
+</ul></li>
+<li class="chapter" data-level="5.9" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#comparación-de-modelos"><i class="fa fa-check"></i><b>5.9</b> Comparación de modelos</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="anexos.html"><a href="anexos.html"><i class="fa fa-check"></i><b>6</b> Anexos</a>
 <ul>
@@ -316,7 +327,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Debemos conocer si el problema es significativo, si el problema se puede resolver con ciencia de datos, y si habrá un compromiso real del lado de cliente/usuario/partner para implementar la solución con todas sus implicaciones: recursos físicos y humanos.</li>
 </ul></li>
 </ol>
-<p><img src="img/02-ciclo/02-identificacion.jpg" style="display: block; margin: auto;" /></p>
+<p><img src="img/02-ciclo/02-identificacion.jpg" width="327" style="display: block; margin: auto;" /></p>
 <ol start="2" style="list-style-type: decimal">
 <li><p><strong>Scoping</strong></p>
 <ul>
@@ -335,7 +346,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Asegurar que en la transferencia estamos cumpliendo con el manejo adecuado de datos sensibles y privados.</p></li>
 </ul></li>
 </ol>
-<p><img src="img/02-ciclo/04-datos.jpg" style="display: block; margin: auto;" /></p>
+<p><img src="img/02-ciclo/04-datos.jpg" width="362" style="display: block; margin: auto;" /></p>
 <ol start="4" style="list-style-type: decimal">
 <li><p><strong>EDA</strong></p>
 <ul>
@@ -344,7 +355,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Altamente apoyado de visualización y procesos de adquisición y limpieza de datos.</p></li>
 </ul></li>
 </ol>
-<p><img src="img/02-ciclo/05-eda.jpg" style="display: block; margin: auto;" /></p>
+<p><img src="img/02-ciclo/05-eda.jpg" width="800" style="display: block; margin: auto;" /></p>
 <ol start="5" style="list-style-type: decimal">
 <li><p><strong>Formulación analítica</strong></p>
 <ul>
@@ -352,7 +363,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li><p><strong>Modelado</strong></p>
 <ul>
-<li><p>Proceso iterativo para desarrollar diferentes “experimentos”.</p>
+<li><p>Proceso iterativo para desarrollar diferentes “experimentos.”</p>
 <ul>
 <li>Mismo algoritmo/método diferentes hiperparámetros (grid search).</li>
 <li>Diferentes algortimos.</li>
@@ -361,7 +372,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Correcta interpretación de los resultados de desempeño de cada modelo.</p></li>
 </ul></li>
 </ol>
-<p><img src="img/02-ciclo/06-formulacion.jpg" style="display: block; margin: auto;" /></p>
+<p><img src="img/02-ciclo/06-formulacion.jpg" width="600" style="display: block; margin: auto;" /></p>
 <ol start="7" style="list-style-type: decimal">
 <li><p><strong>Validación</strong></p>
 <ul>
@@ -369,7 +380,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Debemos medir el impacto causal que nuestro modelo tuvo en un ambiente real.</p></li>
 </ul></li>
 </ol>
-<p><img src="img/02-ciclo/07-validacion.jpg" style="display: block; margin: auto;" /></p>
+<p><img src="img/02-ciclo/07-validacion.jpg" width="256" style="display: block; margin: auto;" /></p>
 <ol start="8" style="list-style-type: decimal">
 <li><p><strong>Acciones a realizar</strong></p>
 <ul>
@@ -377,7 +388,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Las implicaciones éticas de esta fase consisten en hacer conciente el impacto social de nuestro trabajo.</p></li>
 </ul></li>
 </ol>
-<p><img src="img/02-ciclo/08-action.jpg" style="display: block; margin: auto;" /></p>
+<p><img src="img/02-ciclo/08-action.jpg" width="300" style="display: block; margin: auto;" /></p>
 </div>
 <div id="data-science-scoping" class="section level2" number="3.2">
 <h2><span class="header-section-number">3.2</span> Data Science <em>scoping</em></h2>
@@ -401,11 +412,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>Matriz de preparación de datos y tecnología</li>
 </ul>
-<p><img src="img/02-ciclo/11-dmf2.png" style="display: block; margin: auto;" /></p>
+<p><img src="img/02-ciclo/11-dmf2.png" width="962" style="display: block; margin: auto;" /></p>
 <ul>
 <li>Matriz de preparación organizacional</li>
 </ul>
-<p><img src="img/02-ciclo/12-dmf3.png" style="display: block; margin: auto;" /></p>
+<p><img src="img/02-ciclo/12-dmf3.png" width="854" style="display: block; margin: auto;" /></p>
 </div>
 <div id="scoping" class="section level3" number="3.2.2">
 <h3><span class="header-section-number">3.2.2</span> Scoping</h3>
@@ -440,7 +451,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="niveles-de-madurez-en-data-lake" class="section level6" number="3.2.2.3.1.1">
 <h6><span class="header-section-number">3.2.2.3.1.1</span> Niveles de madurez en Data Lake</h6>
 <ul>
-<li><p><strong>Data puddle</strong>: Repositorio de datos Single-purpose o datos de un solo proyecto (single-project). Este repositorio utiliza tecnologías de “big data”. Los datos que viven en este Data puddle son utilizados normalmente por un solo equipo o en 1 solo proyecto, por lo que el contenido es conocido y entendido por los miembros del equipo.</p></li>
+<li><p><strong>Data puddle</strong>: Repositorio de datos Single-purpose o datos de un solo proyecto (single-project). Este repositorio utiliza tecnologías de “big data.” Los datos que viven en este Data puddle son utilizados normalmente por un solo equipo o en 1 solo proyecto, por lo que el contenido es conocido y entendido por los miembros del equipo.</p></li>
 <li><p><strong>Data pond</strong>: Una colección de al menos 2 data puddle aunque en tecnologías clásicas de almacenamiento de datos como un datawarehouse o un data mart.</p></li>
 <li><p><strong>Data lake</strong>: También contiene al menos 2 data puddle, sin embargo, se diferencia del data pond en dos cosas:</p>
 <ul>
@@ -526,6 +537,7 @@ $('.pipehover_select_one_row tr').hover(function() {
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -565,10 +577,6 @@ gitbook.start({
 "text": null
 },
 "download": ["amt22_02intro2ml1.pdf"],
-"search": {
-"engine": "fuse",
-"options": null
-},
 "toc": {
 "collapse": "subsection"
 }

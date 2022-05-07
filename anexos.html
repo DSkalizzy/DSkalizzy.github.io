@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Capítulo 6 Anexos | AMAT- Introducción a Ciencia de Datos y Machine Learning</title>
   <meta name="description" content="AMAT Curso 1 : Introduccion a Ciencia de Datos" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Capítulo 6 Anexos | AMAT- Introducción a Ciencia de Datos y Machine Learning" />
   <meta property="og:type" content="book" />
@@ -33,9 +33,8 @@
   
 <link rel="prev" href="aprendizaje-supervisado-1.html"/>
 
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
-<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<script src="libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="libs/jquery-3.5.1/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -43,6 +42,7 @@
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
 
 
 
@@ -272,6 +272,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.6.2" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#implementación-en-r-3"><i class="fa fa-check"></i><b>5.6.2</b> Implementación en R</a></li>
 </ul></li>
 <li class="chapter" data-level="5.7" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#bagging"><i class="fa fa-check"></i><b>5.7</b> Bagging</a></li>
+<li class="chapter" data-level="5.8" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#random-forest"><i class="fa fa-check"></i><b>5.8</b> Random Forest</a>
+<ul>
+<li class="chapter" data-level="5.8.1" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#qué-es"><i class="fa fa-check"></i><b>5.8.1</b> ¿Qué es?</a></li>
+<li class="chapter" data-level="5.8.2" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#características-de-los-bosques-aleatorios"><i class="fa fa-check"></i><b>5.8.2</b> Características de los bosques aleatorios</a></li>
+<li class="chapter" data-level="5.8.3" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#aplicar-árboles-de-decisión-en-un-bosque-aleatorio"><i class="fa fa-check"></i><b>5.8.3</b> Aplicar árboles de decisión en un bosque aleatorio</a></li>
+<li class="chapter" data-level="5.8.4" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#ventajas-y-desventjas-de-bosques-aleatorios"><i class="fa fa-check"></i><b>5.8.4</b> Ventajas y desventjas de bosques aleatorios</a></li>
+<li class="chapter" data-level="5.8.5" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#bosques-aleatorios-para-modelo-de-regresión"><i class="fa fa-check"></i><b>5.8.5</b> Bosques aleatorios para modelo de regresión</a></li>
+<li class="chapter" data-level="5.8.6" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#bosques-aleatorios-para-modelo-de-clasificación"><i class="fa fa-check"></i><b>5.8.6</b> Bosques aleatorios para modelo de clasificación</a></li>
+<li class="chapter" data-level="5.8.7" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#importancia-de-las-variables"><i class="fa fa-check"></i><b>5.8.7</b> Importancia de las variables</a></li>
+</ul></li>
+<li class="chapter" data-level="5.9" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#comparación-de-modelos"><i class="fa fa-check"></i><b>5.9</b> Comparación de modelos</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="anexos.html"><a href="anexos.html"><i class="fa fa-check"></i><b>6</b> Anexos</a>
 <ul>
@@ -313,9 +324,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="plantilla-de-estructura-proyecto" class="section level3" number="6.1.1">
 <h3><span class="header-section-number">6.1.1</span> Plantilla de estructura proyecto</h3>
 <p>En esta sección, se presenta una introducción a la librería <a href="http://projecttemplate.net/"><strong>ProjectTemplate</strong></a>, la cual facilita una estructura predeterminada que ayudará como punto de partida para mantener orden y control en cada momento del proyecto.</p>
-<div class="sourceCode" id="cb219"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb219-1"><a href="anexos.html#cb219-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ProjectTemplate)</span>
-<span id="cb219-2"><a href="anexos.html#cb219-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb219-3"><a href="anexos.html#cb219-3" aria-hidden="true" tabindex="-1"></a>ProjectTemplate<span class="sc">::</span><span class="fu">create.project</span>(<span class="at">project.name =</span> <span class="st">&#39;intro2dsml&#39;</span>, <span class="at">rstudio.project =</span> T)</span></code></pre></div>
+<div class="sourceCode" id="cb248"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb248-1"><a href="anexos.html#cb248-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ProjectTemplate)</span>
+<span id="cb248-2"><a href="anexos.html#cb248-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb248-3"><a href="anexos.html#cb248-3" aria-hidden="true" tabindex="-1"></a>ProjectTemplate<span class="sc">::</span><span class="fu">create.project</span>(<span class="at">project.name =</span> <span class="st">&#39;intro2dsml&#39;</span>, <span class="at">rstudio.project =</span> T)</span></code></pre></div>
 <p>ProjectTemplate::<strong>create.project()</strong> creará toda la estructura de carpetas para un nuevo proyecto. Configurará todos los directorios relevantes y sus contenidos iniciales. Para aquellos que solo desean la funcionalidad mínima, el argumento de <em>template</em> se puede establecer en <em>minimal</em> para crear un subconjunto de directorios predeterminados de ProjectTemplate.</p>
 <p><img src="img/01-intro/18_folder_structure.png" width="600px" height="300px" style="display: block; margin: auto;" /></p>
 <ul>
@@ -326,7 +337,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p><strong>doc:</strong> En este folder puede almacenarse cualquier documentación que haya escrito sobre el análisis. También se puede usar como directorio raíz para las páginas de <a href="https://github.com/"><strong>GitHub</strong></a> para crear un sitio web de proyecto.</p></li>
 <li><p><strong>graphs:</strong> Sirve para almacenar las gráficas producidas por el análisis</p></li>
 <li><p><strong>lib:</strong> Aquí se almacenarán todos los archivos que proporcionen una funcionalidad útil para su trabajo, pero que no constituyan un análisis estadístico per se. Específicamente, debe usar el script lib/helpers.R para organizar cualquier función que use en su proyecto que no sea lo suficientemente general como para pertenecer a un paquete. Si tiene una configuración específica del proyecto que le gustaría almacenar en el objeto de configuración, puede especificarla en lib/globals.R.</p></li>
-<li><p><strong>logs:</strong> Aquí puede almacenarse un archivo de registro de cualquier trabajo que haya realizado en este proyecto. Si va a registrar su trabajo, se recomienda utilizar el paquete <em>log4r</em>, que ProjectTemplate cargará automáticamente si activa la opción de configuración de registro. El nivel de registro se puede establecer a través de la configuración <em>logging_level</em> en la configuración, el valor predeterminado es “INFO”.</p></li>
+<li><p><strong>logs:</strong> Aquí puede almacenarse un archivo de registro de cualquier trabajo que haya realizado en este proyecto. Si va a registrar su trabajo, se recomienda utilizar el paquete <em>log4r</em>, que ProjectTemplate cargará automáticamente si activa la opción de configuración de registro. El nivel de registro se puede establecer a través de la configuración <em>logging_level</em> en la configuración, el valor predeterminado es “INFO.”</p></li>
 <li><p><strong>munge:</strong> En este folder puede almacenarse cualquier código de preprocesamiento o manipulación de datos para el proyecto. Por ejemplo, si necesita agregar columnas en tiempo de ejecución, fusionar conjuntos de datos normalizados o censurar globalmente cualquier punto de datos, ese código debe almacenarse en el directorio munge. Los scripts de preprocesamiento almacenados en munge se ejecutarán en orden alfabético cuando se llame a la función <em>load.project()</em>, por lo que debe anteponerse números a los nombres de archivo para indicar su orden secuencial.</p></li>
 <li><p><strong>profiling:</strong> Aquí puede almacenar cualquier script que use para comparar y cronometrar su código.</p></li>
 <li><p><strong>reports:</strong> Aquí puede almacenar cualquier informe de salida, como versiones de tablas HTML o LaTeX, que produzca. Los documentos de sweave o brew también deben ir en el directorio de informes.</p></li>
@@ -336,15 +347,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p><em>TODO:</em> En este archivo, debe escribir una lista de futuras mejoras y correcciones de errores que planea realizar en sus análisis.</p></li>
 </ul>
 <p>Si algunas o todas estas carpetas resultan innecesarias, puede comenzarse con una versión simplificada a través del comando:</p>
-<div class="sourceCode" id="cb220"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb220-1"><a href="anexos.html#cb220-1" aria-hidden="true" tabindex="-1"></a><span class="fu">create.project</span>(<span class="at">project.name =</span> <span class="st">&#39;intro2dsml&#39;</span>, <span class="at">template=</span><span class="st">&#39;minimal&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb249"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb249-1"><a href="anexos.html#cb249-1" aria-hidden="true" tabindex="-1"></a><span class="fu">create.project</span>(<span class="at">project.name =</span> <span class="st">&#39;intro2dsml&#39;</span>, <span class="at">template=</span><span class="st">&#39;minimal&#39;</span>)</span></code></pre></div>
 <p><img src="img/01-intro/19_create_project_minimal.png" width="600px" height="300px" style="display: block; margin: auto;" /></p>
 </div>
 <div id="reproducibilidad" class="section level3" number="6.1.2">
 <h3><span class="header-section-number">6.1.2</span> Reproducibilidad</h3>
 <p>Trabajar de esta manera permitirá que un proyecto sea reproducible por cualquier persona con el acceso y los permisos adecuados para colaborar. Sin importar que existan nuevas versiones de R o sus librerías, este ambiente virtual creado será reisiliente a tales cambios, permitiendo que el proyecto perdure a lo largo del tiempo.</p>
-<div class="sourceCode" id="cb221"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb221-1"><a href="anexos.html#cb221-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(renv)</span>
-<span id="cb221-2"><a href="anexos.html#cb221-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb221-3"><a href="anexos.html#cb221-3" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">init</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb250"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb250-1"><a href="anexos.html#cb250-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(renv)</span>
+<span id="cb250-2"><a href="anexos.html#cb250-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb250-3"><a href="anexos.html#cb250-3" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">init</span>()</span></code></pre></div>
 <p>renv::<strong>init()</strong> inicializa un nuevo entorno local de proyecto con una biblioteca <em>R</em> privada. La función renv::init() intenta garantizar que la biblioteca del proyecto recién creada incluya todos los paquetes de <em>R</em> utilizados actualmente por el proyecto. Lo hace rastreando archivos R dentro del proyecto en busca de dependencias. Los paquetes descubiertos luego se instalan en la biblioteca del proyecto, que también intentará ahorrar tiempo copiando paquetes de la biblioteca del usuario (en lugar de reinstalarlos desde CRAN) según corresponda.</p>
 <p>Al usar <em>renv</em>, es posible “salvar” y “cargar” el estado de las librerías del proyecto a través de las siguientes funciones:</p>
 <blockquote>
@@ -399,6 +410,7 @@ $('.pipehover_select_one_row tr').hover(function() {
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -438,10 +450,6 @@ gitbook.start({
 "text": null
 },
 "download": ["amt22_02intro2ml1.pdf"],
-"search": {
-"engine": "fuse",
-"options": null
-},
 "toc": {
 "collapse": "subsection"
 }

@@ -142,6 +142,15 @@ regresión-3
 métricas-de-desempeño-4
 clasificación-4
 bagging
+random-forest
+qué-es
+características-de-los-bosques-aleatorios
+aplicar-árboles-de-decisión-en-un-bosque-aleatorio
+ventajas-y-desventjas-de-bosques-aleatorios
+bosques-aleatorios-para-modelo-de-regresión
+bosques-aleatorios-para-modelo-de-clasificación
+importancia-de-las-variables
+comparación-de-modelos
 anexos
 orden-y-estructura-de-proyecto
 plantilla-de-estructura-proyecto

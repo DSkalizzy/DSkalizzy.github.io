@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>AMAT- Introducción a Ciencia de Datos y Machine Learning</title>
   <meta name="description" content="AMAT Curso 1 : Introduccion a Ciencia de Datos" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="AMAT- Introducción a Ciencia de Datos y Machine Learning" />
   <meta property="og:type" content="book" />
@@ -33,9 +33,8 @@
   
 
 <link rel="next" href="intro.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
-<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<script src="libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="libs/jquery-3.5.1/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -43,6 +42,7 @@
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
 
 
 
@@ -272,6 +272,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.6.2" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#implementación-en-r-3"><i class="fa fa-check"></i><b>5.6.2</b> Implementación en R</a></li>
 </ul></li>
 <li class="chapter" data-level="5.7" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#bagging"><i class="fa fa-check"></i><b>5.7</b> Bagging</a></li>
+<li class="chapter" data-level="5.8" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#random-forest"><i class="fa fa-check"></i><b>5.8</b> Random Forest</a>
+<ul>
+<li class="chapter" data-level="5.8.1" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#qué-es"><i class="fa fa-check"></i><b>5.8.1</b> ¿Qué es?</a></li>
+<li class="chapter" data-level="5.8.2" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#características-de-los-bosques-aleatorios"><i class="fa fa-check"></i><b>5.8.2</b> Características de los bosques aleatorios</a></li>
+<li class="chapter" data-level="5.8.3" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#aplicar-árboles-de-decisión-en-un-bosque-aleatorio"><i class="fa fa-check"></i><b>5.8.3</b> Aplicar árboles de decisión en un bosque aleatorio</a></li>
+<li class="chapter" data-level="5.8.4" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#ventajas-y-desventjas-de-bosques-aleatorios"><i class="fa fa-check"></i><b>5.8.4</b> Ventajas y desventjas de bosques aleatorios</a></li>
+<li class="chapter" data-level="5.8.5" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#bosques-aleatorios-para-modelo-de-regresión"><i class="fa fa-check"></i><b>5.8.5</b> Bosques aleatorios para modelo de regresión</a></li>
+<li class="chapter" data-level="5.8.6" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#bosques-aleatorios-para-modelo-de-clasificación"><i class="fa fa-check"></i><b>5.8.6</b> Bosques aleatorios para modelo de clasificación</a></li>
+<li class="chapter" data-level="5.8.7" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#importancia-de-las-variables"><i class="fa fa-check"></i><b>5.8.7</b> Importancia de las variables</a></li>
+</ul></li>
+<li class="chapter" data-level="5.9" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#comparación-de-modelos"><i class="fa fa-check"></i><b>5.9</b> Comparación de modelos</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="anexos.html"><a href="anexos.html"><i class="fa fa-check"></i><b>6</b> Anexos</a>
 <ul>
@@ -323,7 +334,7 @@ Todo lo anterior será cumplido mientras el alumno aprende las paqueterías y fu
 <strong>Email:</strong> <a href="mailto:act.arturo.b@ciencias.unam.mx" class="email">act.arturo.b@ciencias.unam.mx</a></p>
 <p>Actuario, egresado de la Facultad de Ciencias y Maestría en Ciencia de Datos, ITAM.
 Experiencia en modelos predictivos y de clasificación de machine learning aplicado a seguros, deportes y movilidad internacional. Es jefe de departamento en Investigación Aplicada y Opinión de la UNAM, donde realiza estudios estadísticos de impacto social. Es consultor para empresas y organizaciones como GNP, El Universal, UNAM, Sinnia, la Organización de las Naciones Unidas Contra la Droga y el Delito (UNODC), entre otros. Actualmente es profesor de machine learning y programación en R en AMAT y se desempeña como consultor independiente en diferentes proyectos contribuyendo a empresas en temas de machine learning, estadística, series de tiempo, visualización de datos y análisis geoespacial.</p>
-<p><img src="img/00-presentacion/arturo.png" style="display: block; margin: auto;" /></p>
+<p><img src="img/00-presentacion/arturo.png" width="236" style="display: block; margin: auto;" /></p>
 <p><strong>ACT. KARINA LIZETTE GAMBOA</strong></p>
 <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/kalizzygam/">KaLizzyGam</a>
 <strong>Email:</strong> <a href="mailto:lizzygamboa@ciencias.unam.mx" class="email">lizzygamboa@ciencias.unam.mx</a></p>
@@ -340,11 +351,11 @@ de la Investigación Social por la UNAM así como instructora de cursos de Cienc
 Datos en AMAT.</p>
 <p>Empresas anteriores: GNP, Activer Banco y Casa de Bolsa, PlayCity Casinos,
 RakenDataGroup Consulting, entre otros.</p>
-<p><img src="img/00-presentacion/lizzy.png" style="display: block; margin: auto;" /></p>
+<p><img src="img/00-presentacion/lizzy.png" width="236" style="display: block; margin: auto;" /></p>
 </div>
 <div id="ciencia-de-datos-en-r" class="section level2" number="1.3">
 <h2><span class="header-section-number">1.3</span> Ciencia de Datos en R</h2>
-<p><img src="img/00-presentacion/DataScienceVerse.png" style="display: block; margin: auto;" /></p>
+<p><img src="img/00-presentacion/DataScienceVerse.png" width="1027" style="display: block; margin: auto;" /></p>
 </div>
 <div id="estructura-del-curso-actual" class="section level2" number="1.4">
 <h2><span class="header-section-number">1.4</span> Estructura del curso actual</h2>
@@ -468,6 +479,7 @@ $('.pipehover_select_one_row tr').hover(function() {
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -507,10 +519,6 @@ gitbook.start({
 "text": null
 },
 "download": ["amt22_02intro2ml1.pdf"],
-"search": {
-"engine": "fuse",
-"options": null
-},
 "toc": {
 "collapse": "subsection"
 }

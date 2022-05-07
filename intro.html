@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Capítulo 2 INTRODUCCIÓN A CIENCIA DE DATOS | AMAT- Introducción a Ciencia de Datos y Machine Learning</title>
   <meta name="description" content="AMAT Curso 1 : Introduccion a Ciencia de Datos" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Capítulo 2 INTRODUCCIÓN A CIENCIA DE DATOS | AMAT- Introducción a Ciencia de Datos y Machine Learning" />
   <meta property="og:type" content="book" />
@@ -33,9 +33,8 @@
   
 <link rel="prev" href="index.html"/>
 <link rel="next" href="ciclo.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
-<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<script src="libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="libs/jquery-3.5.1/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -43,6 +42,7 @@
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
 
 
 
@@ -272,6 +272,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.6.2" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#implementación-en-r-3"><i class="fa fa-check"></i><b>5.6.2</b> Implementación en R</a></li>
 </ul></li>
 <li class="chapter" data-level="5.7" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#bagging"><i class="fa fa-check"></i><b>5.7</b> Bagging</a></li>
+<li class="chapter" data-level="5.8" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#random-forest"><i class="fa fa-check"></i><b>5.8</b> Random Forest</a>
+<ul>
+<li class="chapter" data-level="5.8.1" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#qué-es"><i class="fa fa-check"></i><b>5.8.1</b> ¿Qué es?</a></li>
+<li class="chapter" data-level="5.8.2" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#características-de-los-bosques-aleatorios"><i class="fa fa-check"></i><b>5.8.2</b> Características de los bosques aleatorios</a></li>
+<li class="chapter" data-level="5.8.3" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#aplicar-árboles-de-decisión-en-un-bosque-aleatorio"><i class="fa fa-check"></i><b>5.8.3</b> Aplicar árboles de decisión en un bosque aleatorio</a></li>
+<li class="chapter" data-level="5.8.4" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#ventajas-y-desventjas-de-bosques-aleatorios"><i class="fa fa-check"></i><b>5.8.4</b> Ventajas y desventjas de bosques aleatorios</a></li>
+<li class="chapter" data-level="5.8.5" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#bosques-aleatorios-para-modelo-de-regresión"><i class="fa fa-check"></i><b>5.8.5</b> Bosques aleatorios para modelo de regresión</a></li>
+<li class="chapter" data-level="5.8.6" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#bosques-aleatorios-para-modelo-de-clasificación"><i class="fa fa-check"></i><b>5.8.6</b> Bosques aleatorios para modelo de clasificación</a></li>
+<li class="chapter" data-level="5.8.7" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#importancia-de-las-variables"><i class="fa fa-check"></i><b>5.8.7</b> Importancia de las variables</a></li>
+</ul></li>
+<li class="chapter" data-level="5.9" data-path="aprendizaje-supervisado-1.html"><a href="aprendizaje-supervisado-1.html#comparación-de-modelos"><i class="fa fa-check"></i><b>5.9</b> Comparación de modelos</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="anexos.html"><a href="anexos.html"><i class="fa fa-check"></i><b>6</b> Anexos</a>
 <ul>
@@ -318,8 +329,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>En la <a href="">estadística descriptiva</a> se utilizan números, como medidas, para analizar datos y llegar a conclusiones de acuerdo a ellos. Con la <a href="">estadística inferencial</a> se intenta conseguir información al utilizar un procedimiento ordenado en el manejo de los datos de la muestra.</p></li>
 <li><p>Algunos dicen que La estadística inferencial se encarga de realizar el cálculo de la probabilidad de que algo ocurra en el futuro</p></li>
 </ul>
-<p><img src="img/01-intro/000_estadistica-descriptiva-inferencial.jpeg" style="display: block; margin: auto;" /></p>
-<p><img src="img/01-intro/01_muestra.jpg" style="display: block; margin: auto;" /></p>
+<p><img src="img/01-intro/000_estadistica-descriptiva-inferencial.jpeg" width="300" style="display: block; margin: auto;" /></p>
+<p><img src="img/01-intro/01_muestra.jpg" width="512" style="display: block; margin: auto;" /></p>
 <p><img src="img/01-intro/00_CicloInferencia.jpeg" width="600pt" style="display: block; margin: auto;" /></p>
 <ul>
 <li><strong>Business Intelligence</strong>: BI aprovecha el software y los servicios para transformar los datos en conocimientos prácticos que informan las decisiones empresariales estratégicas y tácticas de una organización. Las herramientas de BI acceden y analizan conjuntos de datos y presentan hallazgos analíticos en informes, resúmenes, tableros, gráficos, cuadros, -indicadores- o KPI’s y mapas para proporcionar a los usuarios inteligencia detallada sobre el estado del negocio. (BI esta enfocado en analizar la historia pasada)</li>
@@ -336,18 +347,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Coherentes</li>
 <li>Relevantes</li>
 </ul>
-<p><img src="img/01-intro/04_bi.png" style="display: block; margin: auto;" /></p>
+<p><img src="img/01-intro/04_bi.png" width="440" style="display: block; margin: auto;" /></p>
 <ul>
 <li><strong>Machine Learning</strong>: El ‘machine learning’ –aprendizaje automático– es una rama de la inteligencia artificial que permite que las máquinas aprendan de los patrones existentes en los datos. Se usan métodos computacionales para aprender de datos con el fin de producir reglas para mejorar el desempeño en alguna tarea o toma de decisión. (Está enfocado en la programación de máquinas para aprender de los patrones existentes en datos principalmente estructurados y anticiparse al futuro)</li>
 </ul>
 <p><img src="img/01-intro/02_ml.png" width="600pt" style="display: block; margin: auto;" /></p>
-<p><img src="img/01-intro/03_supervisado_robo.png" style="display: block; margin: auto;" /></p>
+<p><img src="img/01-intro/03_supervisado_robo.png" width="413" style="display: block; margin: auto;" /></p>
 <ul>
 <li><p><strong>Deep Learning</strong>: El aprendizaje profundo es un subcampo del aprendizaje automático que se ocupa de los algoritmos inspirados en la estructura y función del cerebro llamados redes neuronales artificiales.</p>
 <p>En <em>Deep Learning</em>, un modelo de computadora aprende a realizar tareas de clasificación directamente a partir de imágenes, texto o sonido. Los modelos de aprendizaje profundo pueden lograr una precisión de vanguardia, a veces superando el rendimiento a nivel humano. Los modelos se entrenan mediante el uso de un gran conjunto de datos etiquetados y arquitecturas de redes neuronales que contienen muchas capas. (Está enfocado en la programación de máquinas para el reconocimiento de imagenes y audio (datos no estructurados))</p></li>
 </ul>
-<p><img src="img/01-intro/05_reconocimiento.png" style="display: block; margin: auto;" /></p>
-<p><img src="img/01-intro/06_ml1.png" style="display: block; margin: auto;" /></p>
+<p><img src="img/01-intro/05_reconocimiento.png" width="325" style="display: block; margin: auto;" /></p>
+<p><img src="img/01-intro/06_ml1.png" width="408" style="display: block; margin: auto;" /></p>
 <ul>
 <li><p><strong>Big data</strong> se refiere a los grandes y diversos conjuntos de información que crecen a un ritmo cada vez mayor. Abarca el volumen de información, la velocidad a la que se crea y recopila, y la variedad o alcance de los puntos de datos que se cubren. Los macrodatos a menudo provienen de la minería de datos y llegan en múltiples formatos.</p>
 <p>Es comun que se confunda los conceptos de <em>Big Data</em> y <em>Big Compute</em>, como habiamos mencionado <em>Big Data</em> se refiere a el procesamiento de conjuntos de datos que son más voluminosos y complejos que los tradicionales y <em>Big Compute</em> a herramientas y enfoques que utilizan una gran cantidad de recursos de CPU y memoria de forma coordinada para resolver problemas que usan algoritmos muy complejos.</p></li>
@@ -396,7 +407,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Relevancia: De igual manera los datos tienen que tener relevancia para la tarea que queremos resolver, por ejemplo, es probable que información sobre gusto en alimentos sea irrelevante para predecir número de hijos.</p></li>
 </ul></li>
 </ul>
-<p><img src="img/01-intro/09_relevancia_suficiencia.png" style="display: block; margin: auto;" /></p>
+<p><img src="img/01-intro/09_relevancia_suficiencia.png" width="880" style="display: block; margin: auto;" /></p>
 <ul>
 <li><p>Etiquetas</p>
 <ul>
@@ -458,7 +469,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li><p>Conocemos la respuesta correcta de antemano.</p></li>
 <li><p>Esta respuesta correcta fue “etiquetada” por un humano (la mayoría de las veces, en algunas circunstancias puede ser generada por otro algoritmo).</p></li>
-<li><p>Debido a que conocemos la respuesta correcta, existen muchas métricas de desempeño del modelo para verificar que nuestro algoritmo está haciendo las cosas “bien”.</p></li>
+<li><p>Debido a que conocemos la respuesta correcta, existen muchas métricas de desempeño del modelo para verificar que nuestro algoritmo está haciendo las cosas “bien.”</p></li>
 </ul>
 <div id="tipos-de-aprendizaje-supervisado-regresión-vs-clasificación" class="section level4" number="2.5.1.1">
 <h4><span class="header-section-number">2.5.1.1</span> Tipos de aprendizaje supervisado (Regresión vs clasificación)</h4>
@@ -478,7 +489,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Estadísticamente podemos verificar que el algoritmo está bien</p></li>
 <li><p>Siempre tenemos que verificar con el cliente si los resultados que estamos obteniendo tienen sentido de negocio. Por ejemplo, número de grupos y características</p></li>
 </ul>
-<p><img src="img/01-intro/14_nosupervisado_robo.png" style="display: block; margin: auto;" /></p>
+<p><img src="img/01-intro/14_nosupervisado_robo.png" width="473" style="display: block; margin: auto;" /></p>
 
 </div>
 </div>
@@ -515,6 +526,7 @@ $('.pipehover_select_one_row tr').hover(function() {
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -554,10 +566,6 @@ gitbook.start({
 "text": null
 },
 "download": ["amt22_02intro2ml1.pdf"],
-"search": {
-"engine": "fuse",
-"options": null
-},
 "toc": {
 "collapse": "subsection"
 }
